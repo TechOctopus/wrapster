@@ -21,6 +21,13 @@ const filterProducts = (products, filter) => {
     );
   }
 
+  // Filter by collection
+  if (filter.collection && filter.collection.length > 0) {
+    filteredProducts = filteredProducts.filter(product =>
+      filter.collection.includes(product.collection)
+    );
+  }
+
   // Sort by price
   if (filter.sort && filter.sort.orderByPrice) {
      switch (filter.sort.orderByPrice) {
@@ -55,6 +62,10 @@ const countFilters = (filter) => {
 
   if (filter.model && filter.model.length > 0) {
     count += filter.model.length;
+  }
+
+  if (filter.collection && filter.collection.length > 0) {
+    count += filter.collection.length;
   }
 
   if (filter.price && (filter.price.min !== undefined || filter.price.max !== undefined)) {
@@ -140,6 +151,9 @@ const createFilterState = (products) => {
     price: createProxiedProperty({
       min: undefined, max: undefined
     }, () => showProducts(products, filter)),
+    // Filter by collection
+    collection: createProxiedProperty([],
+      () => showProducts(products, filter)),
     // Sorting
     sort: createProxiedProperty({
       orderByPrice: undefined,
@@ -240,12 +254,20 @@ const renderFilters = () => {
       : filter.model.splice(filter.model.indexOf(event.target.value), 1);
   });
 
+  const collectionFilterElement = document.getElementById("collection-filter");
+  collectionFilterElement.addEventListener("change", (event) => {
+    event.target.checked
+      ? filter.collection.push(event.target.value)
+      : filter.collection.splice(filter.collection.indexOf(event.target.value), 1);
+  });
+
   const clearFilterElement = document.getElementById("clear-filters");
   clearFilterElement.addEventListener("click", () => {
     filterMenuElement.style.display = "none";
     filter.price.min = undefined;
     filter.price.max = undefined;
     filter.model.length = 0;
+    filter.collection.length = 0;
     filter.sort.orderByPrice = undefined;
     filter.sort.orderByModel = undefined;
     filter.search.query = "";

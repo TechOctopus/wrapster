@@ -54,7 +54,7 @@
         }
     </style> -->
     <!-- Scripts -->
-<!--    <script src="./js/products.js" type="module"></script>-->
+    <!-- <script src="./js/products.js" type="module"></script> -->
     <!-- ! For Development Only ! -->
     <meta name="description" content="Best covers, cases, and accessories for your incredible devices." />
     <meta name="keywords" content="Wrapster, e-commerce, modern, covers, cases, accessories" />
@@ -136,37 +136,35 @@
             </div>
             <!-- Filtesr menu -->
             <div class="border-t border-gray-200 py-10" id="filters-menu" style="display: none;">
-                <div class="mx-auto grid max-w-[1200px] grid-cols-2 gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
-                    <form class="grid auto-rows-min grid-cols-1 gap-y-10 md:grid-cols-2 md:gap-x-6" id="filter-form">
+                <div class="mx-auto grid max-w-[1200px] gap-x-4 px-4 text-sm sm:px-6 md:gap-x-6 lg:px-8">
+                    <form class="grid auto-rows-min grid-cols-1 gap-y-10 md:grid-cols-4 md:gap-x-6" id="filter-form">
                         <fieldset id="price-filter">
                             <legend class="block font-medium">Price</legend>
                             <div class="space-y-6 pt-6 sm:space-y-4 sm:pt-4">
                                 <div class="flex items-center text-base sm:text-sm">
                                     <input id="price-0" name="price[]" value="0-20" type="radio"
-                                        class="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                           class="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
                                     <label for="price-0" class="ml-3 min-w-0 flex-1 text-gray-600">$0 - $20</label>
                                 </div>
                                 <div class="flex items-center text-base sm:text-sm">
                                     <input id="price-1" name="price[]" value="20-30" type="radio"
-                                        class="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                           class="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
                                     <label for="price-1" class="ml-3 min-w-0 flex-1 text-gray-600">$20 - $30</label>
                                 </div>
                                 <div class="flex items-center text-base sm:text-sm">
                                     <input id="price-2" name="price[]" value="30-40" type="radio"
-                                        class="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                           class="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
                                     <label for="price-2" class="ml-3 min-w-0 flex-1 text-gray-600">$30 - $40</label>
                                 </div>
                                 <div class="flex items-center text-base sm:text-sm">
                                     <input id="price-3" name="price[]" value="40-1000" type="radio"
-                                        class="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                           class="rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
                                     <label for="price-3" class="ml-3 min-w-0 flex-1 text-gray-600">$40+</label>
                                 </div>
                             </div>
                         </fieldset>
                         <fieldset id="model-filter">
-                            <legend class="block font-medium">
-                                Device
-                            </legend>
+                            <legend class="block font-medium">Device</legend>
                             <div class="space-y-6 pt-6 sm:space-y-4 sm:pt-4">
                                 <div class="flex items-center text-base sm:text-sm">
                                     <input id="color-0" name="color[]" value="iphone-15-pro-max" type="checkbox"
@@ -202,6 +200,99 @@
                                     <label for="color-4" class="ml-3 min-w-0 flex-1 text-gray-600">
                                         Samsung Galaxy S24 Ultra
                                     </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset id="collection-filter" class="col-span-2">
+                            <legend class="block font-medium">Collection</legend>
+                            <div class="grid grid-cols-2">
+                                <div class="space-y-6 pt-6 sm:space-y-4 sm:pt-4">
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="ultramatte_teardown" name="color[]" value="ultramatte_teardown" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="ultramatte_teardown" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            Ultramatte Teardown
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="teardown" name="color[]" value="teardown" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="teardown" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            Teardown
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="real_brown_leather" name="color[]" value="real_brown_leather" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="real_brown_leather" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            Real Brown Leather
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="solstice" name="color[]" value="solstice" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="solstice" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            Solstice
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="acid" name="color[]" value="acid" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="acid" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            ACID
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="tmnp" name="color[]" value="tmnp" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="tmnp" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            TMNP
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="space-y-6 pt-6 sm:space-y-4 sm:pt-4">
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="green_camo" name="color[]" value="green_camo" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="green_camo" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            GREEN CAMO
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="black_carbon" name="color[]" value="black_carbon" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="black_carbon" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            BLACK CARBON
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="deadquarters" name="color[]" value="deadquarters" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="deadquarters" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            DEADQUARTERS
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="x-ray-light" name="color[]" value="x-ray-light" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="x-ray-light" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            X-RAY (LIGHT)
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="obsidian" name="color[]" value="obsidian" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="obsidian" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            OBSIDIAN
+                                        </label>
+                                    </div>
+                                    <div class="flex items-center text-base sm:text-sm">
+                                        <input id="magma" name="color[]" value="magma" type="checkbox"
+                                               class="h-4 w-4 flex-shrink-0 rounded border-gray-300 text-primary-600 focus:ring-primary-500" />
+                                        <label for="magma" class="ml-3 min-w-0 flex-1 text-gray-600">
+                                            MAGMA
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </fieldset>
