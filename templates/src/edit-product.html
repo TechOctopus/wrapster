@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <!-- For production -->
+    <link href="./min/global.min.css" rel="stylesheet" />
+    <script src="./min/editProduct.min.js" type="module"></script>
+    <!-- ! For Development Only ! -->
+    <!-- Tailwind CSS -->
+    <!--  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                primary: {
+                  50: 'var(--color-primary-50)',
+                  100: 'var(--color-primary-100)',
+                  200: 'var(--color-primary-200)',
+                  300: 'var(--color-primary-300)',
+                  400: 'var(--color-primary-400)',
+                  500: 'var(--color-primary-500)',
+                  600: 'var(--color-primary-600)',
+                  700: 'var(--color-primary-700)',
+                  800: 'var(--color-primary-800)',
+                  900: 'var(--color-primary-900)',
+                  950: 'var(--color-primary-950)',
+                },
+              }
+            }
+          }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --color-primary-50: #eef2ff;
+                --color-primary-100: #e0e7ff;
+                --color-primary-200: #c7d2fe;
+                --color-primary-300: #a5b4fc;
+                --color-primary-400: #818cf8;
+                --color-primary-500: #6366f1;
+                --color-primary-600: #4f46e5;
+                --color-primary-700: #4338ca;
+                --color-primary-800: #3730a3;
+                --color-primary-900: #312e81;
+                --color-primary-950: #1e1b4b;
+            }
+        }
+    </style> -->
+    <!-- Scripts -->
+    <!-- <script src="./js/editProduct.js" type="module"></script> -->
+    <!-- ! For Development Only ! -->
+    <meta name="description" content="Wrapster is a modern e-commerce platform for covers, cases, and accessories." />
+    <meta name="keywords" content="Wrapster, e-commerce, modern, covers, cases, accessories" />
+    <meta name="author" content="Wrapster" />
+    <title>Wrapster | Admin - Editor</title>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 z-10 h-16 w-full bg-gray-100 shadow-md">
+        <nav class="mx-auto flex h-full w-full max-w-[1200px] items-center gap-4 px-6">
+            <a
+                class="flex flex-shrink-0 items-center"
+                href="./index.html"
+                aria-label="Home"
+            >
+                <svg
+                    class="fill-current text-primary-500"
+                    width="50px"
+                    height="50px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1512 982"
+                >
+                  <path
+                      fill="CurrentColor"
+                      fill-rule="evenodd"
+                      d="M794.465 349.928c.353-3.26.535-6.573.535-9.928 0-50.258-40.742-91-91-91s-91 40.742-91 91c0 .79.01 1.577.03 2.361-13.626 105.92-96.445 190.173-201.668 205.972-2.591-.22-5.214-.333-7.862-.333-50.534 0-91.5 40.966-91.5 91.5s40.966 91.5 91.5 91.5c3.218 0 6.397-.166 9.53-.49 205.778-10.097 370.887-174.922 381.435-380.582ZM495 341c0 49.706-40.294 90-90 90s-90-40.294-90-90 40.294-90 90-90 90 40.294 90 90Zm704 1c0 3.355-.18 6.668-.54 9.929-10.54 205.659-175.65 370.483-381.43 380.581-3.132.324-6.312.49-9.53.49-50.534 0-91.5-40.966-91.5-91.5s40.966-91.5 91.5-91.5c2.648 0 5.271.113 7.862.333 105.223-15.799 188.038-100.052 201.668-205.972-.02-.784-.03-1.572-.03-2.361 0-50.258 40.74-91 91-91s91 40.742 91 91Z"
+                      clip-rule="evenodd"
+                  />
+                </svg>
+            </a>
+            <ul class="flex items-center space-x-4">
+                <li><a href="./index.html" aria-label="Home">Home</a></li>
+                <li><a href="./products.html" aria-label="Products">Products</a></li>
+            </ul>
+            <div class="ml-auto flex items-center space-x-6">
+                <a class="flex h-5 w-5 items-center justify-center" href="sign-in.html" aria-label="Sign In">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-user-round">
+                        <circle cx="12" cy="8" r="5" />
+                        <path d="M20 21a8 8 0 0 0-16 0" />
+                    </svg>
+                </a>
+                <a class="flex h-5 w-5 items-center justify-center" href="./cart.html" aria-label="Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-shopping-cart">
+                        <circle cx="8" cy="21" r="1" />
+                        <circle cx="19" cy="21" r="1" />
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main class="flex w-full flex-col bg-white min-h-svh">
+        <!-- Add new product -->
+        <section class="mx-auto w-full max-w-[1200px] overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
+            <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Edit product</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-10">
+                <form class="col-span-2" method="POST" action="./admin.html">
+                    <h2 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">Product details</h2>
+                    <div class="border-b border-gray-900/10 pb-12 mt-6">
+                        <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <!-- Product image -->
+                            <div class="sm:col-span-6">
+                                <label for="product-name" class="block text-sm font-medium leading-6 text-gray-900">
+                                    Product name
+                                </label>
+                                <div class="mt-2">
+                                    <input
+                                        type="text" name="product-name" id="product-name"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Product label -->
+                            <div class="sm:col-span-3">
+                                <label for="product-label" class="block text-sm font-medium leading-6 text-gray-900">
+                                    Product label
+                                </label>
+                                <div class="mt-2">
+                                    <input
+                                        type="text" name="product-label" id="product-label"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Product price -->
+                            <div class="sm:col-span-3">
+                                <label for="product-price" class="block text-sm font-medium leading-6 text-gray-900">
+                                    Price
+                                </label>
+                                <div class="mt-2">
+                                    <input
+                                        type="text" name="product-price" id="product-price"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Product count -->
+                            <div class="sm:col-span-3">
+                                <label for="product-count" class="block text-sm font-medium leading-6 text-gray-900">
+                                    Count
+                                </label>
+                                <div class="mt-2">
+                                    <input
+                                        type="text" name="count" id="product-count"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                                    />
+                                </div>
+                            </div>
+                            <!-- Product model -->
+                            <div class="sm:col-span-3">
+                                <label for="product-model" class="block text-sm font-medium leading-6 text-gray-900">
+                                    Product model
+                                </label>
+                                <div class="mt-2">
+                                    <select
+                                        id="product-model" name="model"
+                                        class="block rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary-600  sm:text-sm sm:leading-6 w-full"
+                                    >
+                                        <option>iphone-15-pro-max</option>
+                                        <option>macbook-pro-16-2023-m3</option>
+                                        <option>ipad-pro-129-2022-gen-6</option>
+                                        <option>pixel-8-pro</option>
+                                        <option>galaxy-s24-ultra</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Product description -->
+                            <div class="col-span-full">
+                                <label for="product-description" class="block text-sm font-medium leading-6 text-gray-900">
+                                    Description
+                                </label>
+                                <div class="mt-2">
+                                    <textarea
+                                        id="product-description" name="description" rows="5"
+                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
+                                    >
+                                    </textarea>
+                                </div>
+                            </div>
+                            <!-- Product photo -->
+                            <div class="col-span-full">
+                                <p class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Cover photo</p>
+                                <div class="mt-2 sm:col-span-2">
+                                    <div
+                                        id="product-image-container"
+                                        class="flex  justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10"
+                                    >
+                                        <div class="text-center">
+                                            <div id="product-image-cover" class="flex w-10 h-6 mx-auto items-center justify-center">
+                                                <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
+                                                </svg>
+                                            </div>
+                                            <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                                                <label for="product-image" class="relative cursor-pointer rounded-md bg-white font-semibold text-primary-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-primary-600 focus-within:ring-offset-2 hover:text-primary-500">
+                                                    <span>Upload a file</span>
+                                                    <input id="product-image" name="product-image" type="file" class="sr-only">
+                                                </label>
+                                                <p class="pl-1">or drag and drop</p>
+                                            </div>
+                                            <p class="text-xs leading-5 text-gray-600">WEBP up to 10MB</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-center justify-end gap-x-6">
+                        <button
+                            type="button"
+                            class="text-sm font-semibold leading-6 text-gray-900"
+                            onclick="window.history.back();"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                            type="submit"
+                            class="rounded-md bg-primary-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                        >
+                            Change
+                        </button>
+                    </div>
+                </form>
+                <div class="w-full">
+                    <h2 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">Preview</h2>
+                    <p class="block text-sm font-medium leading-6 text-gray-900 mt-6">Preview card</p>
+                    <div class="mx-auto w-full border border-gray-200 rounded-md p-6 mt-2">
+                        <div class="group relative">
+                            <div class="bg-w h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80 p-4" id="preview-image">
+                                <div class="flex items-center justify-center h-full w-full">
+                                    <svg class="animate-spin h-5 w-5 mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                                    </svg>
+                                    <span>Loading</span>
+                                </div>
+                            </div>
+                            <h3 class="mt-4 text-sm text-gray-700" id="preview-name">Preview name</h3>
+                            <p class="mt-1 text-sm text-gray-500" id="preview-label">Preview label</p>
+                            <p class="mt-1 text-sm font-medium text-gray-900" id="preview-price">Preview price</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="h-16 w-full bg-gray-100">
+        <div class="mx-auto flex h-full w-full max-w-[1200px] items-center justify-center px-6">
+            <p>Made with ❤️</p>
+        </div>
+    </footer>
+</body>
+<!-- For Tailwind CSS
+<img
+    width="20"
+    height="20"
+    src="${product.image}"
+    alt="${product.name}"
+    class="object-contain object-center"
+/>
+<svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z" clip-rule="evenodd" />
+</svg>
+<img
+    src="${product.image}"
+    alt="${product.name}"
+    class="object-fit h-full w-full object-contain object-center"
+    id="preview-image"
+/>
+border-primary-600 -->
+</html>

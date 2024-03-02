@@ -29,7 +29,7 @@ const showProducts = () => {
 
                   <div class="flex flex-col items-start sm:absolute sm:left-1/2 sm:top-0 sm:mt-0">
                       <button
-                          onclick="window.location.href = 'editor.html'"
+                          onclick="window.location.href = './edit-product.html'"
                           type="button"
                           class="text-sm font-medium text-primary-600 hover:text-indigo-500 mt-4 sm:mt-0"
                       >
