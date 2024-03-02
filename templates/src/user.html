@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon.svg" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <!-- For production -->
+    <link href="./min/global.min.css" rel="stylesheet">
+    <!-- ! For Development Only ! -->
+    <!-- Tailwind CSS -->
+    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+                primary: {
+                  50: 'var(--color-primary-50)',
+                  100: 'var(--color-primary-100)',
+                  200: 'var(--color-primary-200)',
+                  300: 'var(--color-primary-300)',
+                  400: 'var(--color-primary-400)',
+                  500: 'var(--color-primary-500)',
+                  600: 'var(--color-primary-600)',
+                  700: 'var(--color-primary-700)',
+                  800: 'var(--color-primary-800)',
+                  900: 'var(--color-primary-900)',
+                  950: 'var(--color-primary-950)',
+                },
+              }
+            }
+          }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            :root {
+                --color-primary-50: #eef2ff;
+                --color-primary-100: #e0e7ff;
+                --color-primary-200: #c7d2fe;
+                --color-primary-300: #a5b4fc;
+                --color-primary-400: #818cf8;
+                --color-primary-500: #6366f1;
+                --color-primary-600: #4f46e5;
+                --color-primary-700: #4338ca;
+                --color-primary-800: #3730a3;
+                --color-primary-900: #312e81;
+                --color-primary-950: #1e1b4b;
+            }
+        }
+    </style> -->
+    <!-- Scripts -->
+    <!-- <script src="./js/products.js" type="module"></script> -->
+    <!-- ! For Development Only ! -->
+    <meta name="description" content="Wrapster is a modern e-commerce platform for covers, cases, and accessories." />
+    <meta name="keywords" content="Wrapster, e-commerce, modern, covers, cases, accessories" />
+    <meta name="author" content="Wrapster" />
+    <title>Wrapster | Admin</title>
+</head>
+<body class="bg-gray-100">
+    <header class="sticky top-0 z-10 h-16 w-full bg-gray-100 shadow-md">
+        <nav class="mx-auto flex h-full w-full max-w-[1200px] items-center gap-4 px-6">
+            <a
+                class="flex flex-shrink-0 items-center"
+                href="./index.html"
+                aria-label="Home"
+            >
+                <svg
+                    class="fill-current text-primary-500"
+                    width="50px"
+                    height="50px"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1512 982"
+                >
+                  <path
+                      fill="CurrentColor"
+                      fill-rule="evenodd"
+                      d="M794.465 349.928c.353-3.26.535-6.573.535-9.928 0-50.258-40.742-91-91-91s-91 40.742-91 91c0 .79.01 1.577.03 2.361-13.626 105.92-96.445 190.173-201.668 205.972-2.591-.22-5.214-.333-7.862-.333-50.534 0-91.5 40.966-91.5 91.5s40.966 91.5 91.5 91.5c3.218 0 6.397-.166 9.53-.49 205.778-10.097 370.887-174.922 381.435-380.582ZM495 341c0 49.706-40.294 90-90 90s-90-40.294-90-90 40.294-90 90-90 90 40.294 90 90Zm704 1c0 3.355-.18 6.668-.54 9.929-10.54 205.659-175.65 370.483-381.43 380.581-3.132.324-6.312.49-9.53.49-50.534 0-91.5-40.966-91.5-91.5s40.966-91.5 91.5-91.5c2.648 0 5.271.113 7.862.333 105.223-15.799 188.038-100.052 201.668-205.972-.02-.784-.03-1.572-.03-2.361 0-50.258 40.74-91 91-91s91 40.742 91 91Z"
+                      clip-rule="evenodd"
+                  />
+                </svg>
+            </a>
+            <ul class="flex items-center space-x-4">
+                <li><a href="./index.html" aria-label="Home">Home</a></li>
+                <li><a href="./products.html" aria-label="Products">Products</a></li>
+            </ul>
+            <div class="ml-auto flex items-center space-x-6">
+                <a
+                    class="flex items-center text-white bg-primary-600 px-3 py-1 rounded-md text-sm"
+                    href="./user.html"
+                    aria-label="User"
+                >
+                    Hi, Heorhi!
+                </a>
+                <a class="flex h-5 w-5 items-center justify-center" href="./cart.html" aria-label="Cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-shopping-cart">
+                        <circle cx="8" cy="21" r="1" />
+                        <circle cx="19" cy="21" r="1" />
+                        <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                    </svg>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main class="flex w-full flex-col bg-white h-svh">
+        <section class="mx-auto w-full max-w-[1200px] overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
+            <div class="border-b border-gray-200 py-5">
+                <div class="-ml-4 -mt-4 flex flex-wrap items-center justify-between sm:flex-nowrap">
+                    <div class="ml-4 mt-4">
+                        <h3 class="text-base font-semibold leading-6 text-gray-900">Heorhi Davydau</h3>
+                        <p class="mt-1 text-sm text-gray-500">heorhid@gmail.com</p>
+                    </div>
+                    <div class="ml-4 mt-4 flex-shrink-0">
+                        <button
+                            onclick="location.href='index.html'"
+                            type="button"
+                            class="relative inline-flex items-center rounded-md bg-primary-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+                        >
+                            Log out
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Orders -->
+        <section class="mx-auto w-full max-w-[1200px] overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
+            <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Order history</h1>
+            <p class="mt-2 text-sm text-gray-500">Check the status of recent orders, manage returns, and discover similar products.</p>
+            <h2 class="sr-only">Recent orders</h2>
+            <div class="border-b border-t border-gray-200 bg-white shadow-sm sm:rounded-lg sm:border mt-8">
+                <h3 class="sr-only">Order placed on <time datetime="2024-03-14">Mar 14, 2024</time></h3>
+
+                <div class="flex items-center border-b border-gray-200 p-4 sm:grid sm:grid-cols-4 sm:gap-x-6 sm:p-6">
+                    <dl class="grid flex-1 grid-cols-2 gap-x-6 text-sm sm:col-span-3 sm:grid-cols-3 lg:col-span-2">
+                        <div>
+                            <dt class="font-medium text-gray-900">Order number</dt>
+                            <dd class="mt-1 text-gray-500">WU88191111</dd>
+                        </div>
+                        <div class="hidden sm:block">
+                            <dt class="font-medium text-gray-900">Date placed</dt>
+                            <dd class="mt-1 text-gray-500">
+                                <time datetime="2021-07-06">Mar 14, 2024</time>
+                            </dd>
+                        </div>
+                        <div>
+                            <dt class="font-medium text-gray-900">Total amount</dt>
+                            <dd class="mt-1 font-medium text-gray-900">$35.94</dd>
+                        </div>
+                    </dl>
+
+                    <div class="relative flex justify-end lg:hidden">
+                        <div class="flex items-center">
+                            <button type="button" class="-m-2 flex items-center p-2 text-gray-400 hover:text-gray-500" id="menu-0-button" aria-expanded="false" aria-haspopup="true">
+                                <span class="sr-only">Options for order WU88191111</span>
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Products -->
+                <h4 class="sr-only">Items</h4>
+                <ul role="list" class="divide-y divide-gray-200">
+                    <li class="p-4 sm:p-6">
+                        <div class="flex items-center sm:items-start">
+                            <div class="p-2 h-20 w-20 flex-shrink-0 overflow-hidden sm:h-40 sm:w-40">
+                                <img src="./public/b1kBnufl0WKE2rNO.webp" alt="Moss green canvas compact backpack with double top zipper, zipper front pouch, and matching carry handle and backpack straps." class="h-full w-full object-contain object-center">
+                            </div>
+                            <div class="ml-6 flex-1 text-sm">
+                                <div class="font-medium text-gray-900 sm:flex sm:justify-between">
+                                    <h5>TEARDOWN</h5>
+                                    <p class="mt-2 sm:mt-0">$31.95</p>
+                                </div>
+                                <p class="hidden text-gray-500 sm:mt-2 sm:block">Made in collaboration with JerryRigEverything, our Teardown skin uses an optically clear gloss finish to ensure you see every dollar you wasted.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 sm:flex sm:justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                                </svg>
+                                <p class="ml-2 text-sm font-medium text-gray-500">Delivered on <time datetime="2024-03-10">March 10, 2024</time></p>
+                            </div>
+
+                            <div class="mt-6 flex items-center space-x-4 divide-x divide-gray-200 border-t border-gray-200 pt-4 text-sm font-medium sm:ml-4 sm:mt-0 sm:border-none sm:pt-0">
+                                <div class="flex flex-1 justify-center">
+                                    <a href="#" class="whitespace-nowrap text-primary-600 hover:text-primary-500">View product</a>
+                                </div>
+                                <div class="flex flex-1 justify-center pl-4">
+                                    <a href="#" class="whitespace-nowrap text-primary-600 hover:text-primary-500">Buy again</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- More products... -->
+                </ul>
+            </div>
+            <!-- More orders... -->
+        </section>
+    </main>
+    <footer class="h-16 w-full bg-gray-100">
+        <div class="mx-auto flex h-full w-full max-w-[1200px] items-center justify-center px-6">
+            <p>Made with ❤️</p>
+        </div>
+    </footer>
+</body>
+</html>
