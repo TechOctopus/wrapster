@@ -29,7 +29,7 @@ export const products = [
     collection: "real_brown_leather",
     price: 49.95,
     image: "public/GM0g_CTK6q_BkzO7.webp",
-    label: "Full-grain Brown Leather. Cows died for this.",
+    label: "Full-grain Brown Leather.",
     description:
       "100% authentic, uncorrected, full-grain, vegetable-tanned leather - no textured stamping or chemical treatment. Over time, scuffs, natural oils & daily wear-and-tear combine to form a timeless patina. Unlike you, this leather will only get better with age. Thanks, Bessie.",
     model: "ipad-pro-129-2022-gen-6",

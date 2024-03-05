@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f46e5">
     <link rel="icon" href="./favicon.svg" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png">
     <!-- For production -->
@@ -62,7 +63,7 @@
     <title>Wrapster | Checkout</title>
 </head>
 <body class="bg-gray-100">
-    <header class="sticky top-0 z-10 h-16 w-full bg-gray-100 shadow-md">
+    <header class="sticky top-0 z-10 h-16 w-full bg-gray-100  backdrop-blur-xl bg-opacity-80 shadow-md">
         <nav class="mx-auto flex h-full w-full max-w-[1200px] items-center gap-4 px-6">
             <a
                 class="flex flex-shrink-0 items-center"
@@ -459,6 +460,7 @@
                             </h2>
                             <button
                                 type="button"
+                                onclick="window.location.href = '/thank-you'"
                                 class="mt-8 flex w-full grid-cols-4 items-center justify-center rounded-md border border-transparent bg-black py-2 text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
                             >
                                 <span class="sr-only">Pay with Apple Pay</span>

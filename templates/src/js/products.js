@@ -169,7 +169,7 @@ const createFilterState = (products) => {
 };
 
 const renderFilters = () => {
-  const filter = createFilterState(products);
+  let filter = createFilterState(products);
 
   let filterMenuState = false;
 
@@ -264,15 +264,11 @@ const renderFilters = () => {
   const clearFilterElement = document.getElementById("clear-filters");
   clearFilterElement.addEventListener("click", () => {
     filterMenuElement.style.display = "none";
-    filter.price.min = undefined;
-    filter.price.max = undefined;
-    filter.model.length = 0;
-    filter.collection.length = 0;
-    filter.sort.orderByPrice = undefined;
-    filter.sort.orderByModel = undefined;
-    filter.search.query = "";
+    if (countFilters(filter) > 0) {
+      filter = createFilterState(products);
+      filterFormElemt.reset();
+    }
     searchInputElement.value = "";
-    filterFormElemt.reset();
   });
 };
 
