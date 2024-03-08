@@ -5,6 +5,10 @@ const filterProducts = (products, filter) => {
     return [];
   }
 
+  if (countFilters(filter) === "") {
+    return products;
+  }
+
   let filteredProducts = [...products];
 
   // Filter by min and max price
@@ -30,14 +34,14 @@ const filterProducts = (products, filter) => {
 
   // Sort by price
   if (filter.sort && filter.sort.orderByPrice) {
-     switch (filter.sort.orderByPrice) {
-       case "asc":
-         filteredProducts.sort((a, b) => a.price - b.price);
-         break;
-       case "desc":
-         filteredProducts.sort((a, b) => b.price - a.price);
-         break;
-     }
+    switch (filter.sort.orderByPrice) {
+      case "asc":
+        filteredProducts.sort((a, b) => a.price - b.price);
+        break;
+      case "desc":
+        filteredProducts.sort((a, b) => b.price - a.price);
+        break;
+    }
    }
 
   // Sort by model
@@ -49,9 +53,10 @@ const filterProducts = (products, filter) => {
 
   // Search by name
   if (filter.search && filter.search.query !== "") {
-    filteredProducts = filteredProducts.filter(product =>
-      product.name.toLowerCase().includes(filter.search.query.toLowerCase())
-    );
+    filteredProducts = filteredProducts.filter(product => {
+      const productInfo = `${product.name} ${product.label} ${product.model} ${product.description} ${product.price}`;
+      return productInfo.toLowerCase().includes(filter.search.query.toLowerCase());
+    });
   }
 
   return filteredProducts;
@@ -69,6 +74,10 @@ const countFilters = (filter) => {
   }
 
   if (filter.price && (filter.price.min !== undefined || filter.price.max !== undefined)) {
+    count++;
+  }
+
+  if (filter.sort && (filter.sort.orderByPrice || filter.sort.orderByModel)) {
     count++;
   }
 
@@ -111,13 +120,11 @@ const createEmptyProductsHTML = () => `
 
 const createProductsHTML = (product) => `
   <div class="group relative">
-      <div class="bg-w h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80 p-4">
+      <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
           <img
-              width=180
-              height=320
               src="${product.image}"
               alt="${product.name}"
-              class="object-fit h-full w-full object-contain object-center"
+              class="object-fit w-full aspect-[1/1] object-contain object-center"
           />
       </div>
       <h3 class="mt-4 text-sm text-gray-700">
@@ -178,13 +185,14 @@ const renderFilters = () => {
 
   filtersButtonElement.addEventListener("click", () => {
     filterMenuState = !filterMenuState;
-    filterMenuElement.style.display = filterMenuState ? "block" : "none";
+    filterMenuState ?
+      filterMenuElement.classList.remove("hidden"):
+      filterMenuElement.classList.add("hidden");
   });
 
   const searchInputElement = document.getElementById("search");
   searchInputElement.addEventListener("input", (event) => {
     filter.search.query = event.target.value;
-    console.log(filter.search.query);
   });
 
   const filterFormElemt = document.getElementById("filter-form");
@@ -195,7 +203,9 @@ const renderFilters = () => {
 
   menuButtonElement.addEventListener("click", () => {
     menuState = !menuState;
-    menuElement.style.display = menuState ? "block" : "none";
+    menuState ?
+      menuElement.classList.remove("hidden"):
+      menuElement.classList.add("hidden");
   });
 
   const menuItemsElements = [
@@ -225,20 +235,14 @@ const renderFilters = () => {
         menuItemState.active = event.target.id;
         menuItemElement.className = "bg-gray-100 font-medium text-gray-900 block px-4 py-2 text-sm hover:bg-gray-200";
         switch (event.target.innerText) {
-          case "Lowest Price":
-            filter.sort.orderByPrice = "asc";
-            break;
-          case "Highest Price":
-            filter.sort.orderByPrice = "desc";
-            break;
-          case "Model":
-            filter.sort.orderByModel = "asc";
-            break;
+          case "Lowest Price": filter.sort.orderByPrice = "asc"; break;
+          case "Highest Price": filter.sort.orderByPrice = "desc"; break;
+          case "Model": filter.sort.orderByModel = "asc"; break;
         }
       }
 
       menuState = false;
-      menuElement.style.display = "none";
+      menuElement.classList.add("hidden");
     });
   });
 
@@ -263,12 +267,19 @@ const renderFilters = () => {
 
   const clearFilterElement = document.getElementById("clear-filters");
   clearFilterElement.addEventListener("click", () => {
-    filterMenuElement.style.display = "none";
-    if (countFilters(filter) > 0) {
+    filterMenuElement.classList.add("hidden");
+    filterMenuState = false;
+    menuElement.classList.add("hidden");
+    searchInputElement.value = "";
+    menuState = false;
+    if (countFilters(filter) !== "") {
       filter = createFilterState(products);
       filterFormElemt.reset();
+      menuItemsElements.forEach((menuItemElement) => {
+        menuItemElement.className = "text-gray-500 block px-4 py-2 text-sm hover:bg-indigo-100";
+      });
+      menuItemState.active = undefined;
     }
-    searchInputElement.value = "";
   });
 };
 

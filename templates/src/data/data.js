@@ -145,18 +145,6 @@ export const products = [
   },
   {
     id: 13,
-    name: "X-RAY (LIGHT)",
-    collection: "x-ray-light",
-    price: 24.95,
-    image: "public/_DgljNPkHEJPUm8z.webp",
-    label: "Made with 100% real X-Rays.",
-    description:
-      "This isn’t your doctor’s X-Ray. Each bespoke scan was performed in a metrology lab with one-of-a-kind imaging hardware, originally developed for space exploration. It's literal rocket science. Considering you're not a rocket scientist, it seemed unfair to expect you to choose between light and dark mode. Instead, you can buy one and we’ll give you the other for free.",
-    model: "iphone-15-pro-max",
-    count: 33
-  },
-  {
-    id: 14,
     name: "Ultramatte Teardown",
     collection: "ultramatte_teardown",
     price: 29.95,
@@ -168,7 +156,7 @@ export const products = [
     count: 23
   },
   {
-    id: 15,
+    id: 14,
     name: "Solstice",
     collection: "solstice",
     price: 29.95,
@@ -179,7 +167,7 @@ export const products = [
     model: "ipad-pro-129-2022-gen-6",
   },
   {
-    id: 16,
+    id: 15,
     name: "DEADQUARTERS",
     collection: "deadquarters",
     price: 29.95,
@@ -188,6 +176,17 @@ export const products = [
     description:
       "One of Robot City's innumerable districts, the Deadquarters fulfill two purposes. As the city's administrative nerve center, this is the place where dreams go to die. Owing to the city's progressive stance on euthanasia, it's also where people go to die - assuming they live long enough to reach the front of the line.",
     model: "ipad-pro-129-2022-gen-6",
+  },
+  {
+    id: 16,
+    name: "MAGMA",
+    collection: "magma",
+    price: 24.95,
+    image: "public/7pzknz_YskPf8Jl5.webp",
+    label: "Burning a hole in your wallet.",
+    description:
+      "Made in collaboration with Ali Abdaal. Apparently it's \"impractical\" to mail lava to your house, so this is the next best thing.",
+    model: "iphone-15-pro-max"
   },
   {
     id: 17,
@@ -265,16 +264,5 @@ export const products = [
     description:
       "Made in collaboration with Ali Abdaal. Apparently it's \"impractical\" to mail lava to your house, so this is the next best thing.",
     model: "macbook-pro-16-2023-m3"
-  },
-  {
-    id: 24,
-    name: "MAGMA",
-    collection: "magma",
-    price: 24.95,
-    image: "public/7pzknz_YskPf8Jl5.webp",
-    label: "Burning a hole in your wallet.",
-    description:
-      "Made in collaboration with Ali Abdaal. Apparently it's \"impractical\" to mail lava to your house, so this is the next best thing.",
-    model: "iphone-15-pro-max"
   }
 ];
