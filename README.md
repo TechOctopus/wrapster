@@ -1,8 +1,8 @@
 # Wrapster 
 > Made by Vladyslav Gusiev and Heorhi Davydau
 
-[!CAUTION]
-This educational project utilizes data obtained from the official website of [dbrand](https://dbrand.com) and is strictly for educational purposes. Permission for usage has been granted by dbrand, with the understanding that it will not be utilized for commercial gain. For any usage beyond educational purposes, please contact dbrand directly.
+> [!CAUTION]
+> This educational project utilizes data obtained from the official website of [dbrand](https://dbrand.com) and is strictly for educational purposes. Permission for usage has been granted by dbrand, with the understanding that it will not be utilized for commercial gain. For any usage beyond educational purposes, please contact dbrand directly.
 Aggrement from dbrand:
 
 Message from dbrand:
