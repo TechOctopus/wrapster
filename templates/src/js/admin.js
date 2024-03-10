@@ -8,10 +8,17 @@ const showProducts = () => {
     const productElement = document.createElement("li");
     productElement.className = "flex py-6 sm:py-10";
     productElement.innerHTML = `
-          <div class="flex-shrink-0">
-              <img src="${product.image}"
-                  alt="${product.name}"
-                  class="h-24 w-24 rounded-lg object-contain object-center sm:h-32 sm:w-32">
+          <div class="flex gap-3">
+              <img 
+                  src="${product.image[0]}"
+                  alt="${product.name + "_0"}"
+                  class="h-24 w-24 rounded-lg object-contain object-center sm:h-32 sm:w-32 bg-gray-100 p-2"
+              />
+              <img 
+                  src="${product.image[1]}"
+                  alt="${product.name + "_1"}"
+                  class="h-24 w-24 rounded-lg object-contain object-center sm:h-32 sm:w-32 bg-gray-100 p-2"
+              />
           </div>
 
           <div class="relative ml-4 flex flex-1 flex-col justify-between sm:ml-6">

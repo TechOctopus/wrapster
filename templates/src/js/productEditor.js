@@ -32,9 +32,18 @@ const initDetailsElements = (product) => {
     price: document.getElementById("product-price"),
     count: document.getElementById("product-count"),
     model: document.getElementById("product-model"),
-    image: document.getElementById("product-image"),
-    cover: document.getElementById("product-image-cover"),
-    container: document.getElementById("product-image-container"),
+    images: [
+      {
+        container: document.getElementById("product-image-container-0"),
+        image: document.getElementById("product-image-0"),
+        cover: document.getElementById("product-image-cover-0"),
+      },
+      {
+        container: document.getElementById("product-image-container-1"),
+        image: document.getElementById("product-image-1"),
+        cover: document.getElementById("product-image-cover-1"),
+      }
+    ],
     description: document.getElementById("product-description")
   };
 
@@ -46,7 +55,15 @@ const initDetailsElements = (product) => {
       }
     });
 
-    productDetailsElements.cover.innerHTML = createProductDetailsImage(product);
+    productDetailsElements.images[0].cover.innerHTML = createProductDetailsImage({
+      image: product.image[0],
+      name: product.name + "front view"
+    });
+
+    productDetailsElements.images[1].cover.innerHTML = createProductDetailsImage({
+      image: product.image[1],
+      name: product.name + "back view"
+    });
   }
 
   return productDetailsElements;
@@ -74,7 +91,10 @@ const initPreviewElements = (product) => {
       }
     });
 
-    productPreviewElements.image.innerHTML = createProductPreviewImage(product);
+    productPreviewElements.image.innerHTML = createProductPreviewImage({
+      image: product.image[0],
+      name: product.name + "front view"
+    });
   }
 
   return productPreviewElements;
@@ -85,82 +105,75 @@ const stopDefaultBehavior = (event) => {
   event.preventDefault();
 };
 
-const renderImages = (productDetailsElements, productPreviewElements, file) => {
-  productDetailsElements.cover.innerHTML = createProductDetailsImage({
-    image: file.image,
-    name: file.name
-  });
-
-  productPreviewElements.image.innerHTML = createProductPreviewImage({
-    image: file.image,
-    name: file.name
-  });
-};
-
 export const productEditor = (product) => {
   const productDetailsElements = initDetailsElements(product);
   const productPreviewElements = initPreviewElements(product);
 
-  Array.from(Object.keys(productDetailsElements)).forEach((key) => {
+  ["name", "label", "price"].forEach((key) => {
     productDetailsElements[key].addEventListener("input", (event) => {
-
       if (["name", "label"].includes(key)) {
         event.target.value === "" ?
           productPreviewElements[key].textContent = "Product " + key :
           productPreviewElements[key].textContent = event.target.value;
       }
-
-      if (key === "image") {
-        if (event.target.files.length === 0) {
-          productDetailsElements.cover.innerHTML = createProductDetailsIcon();
-        }
-        else {
-          renderImages(
-            productDetailsElements,
-            productPreviewElements,
-            {
-              image: URL.createObjectURL(event.target.files[0]),
-              name: event.target.files[0].name
-            }
-          );
-        }
-      }
-
       if (key === "price") {
         productPreviewElements[key].textContent = "$" + event.target.value;
       }
     });
   });
 
-  productDetailsElements.container.addEventListener("drop", (event) => {
-    stopDefaultBehavior(event);
-    productDetailsElements.container.classList.remove("border-indigo-600");
+  for (let i = 0; i < productDetailsElements.images.length; i++) {
+    productDetailsElements.images[i].image.addEventListener("input", (event) => {
+      if (event.target.files.length === 0) {
+        productDetailsElements.images[0].cover.innerHTML = createProductDetailsIcon();
+      }
+      else {
+        productDetailsElements.images[i].cover.innerHTML = createProductDetailsImage({
+          image: URL.createObjectURL(event.target.files[0]),
+          name: event.target.files[0].name
+        });
 
-    const dt = event.dataTransfer;
-    const file = dt.files[0];
-
-    productPreviewElements.image.innerHTML = createProductPreviewImage({
-      image: URL.createObjectURL(file),
-      name: file.name
+        if (i === 0) {
+          productPreviewElements.image.innerHTML = createProductPreviewImage({
+            image: URL.createObjectURL(event.target.files[0]),
+            name: event.target.files[0].name
+          });
+        }
+      }
     });
 
-    productDetailsElements.cover.innerHTML = createProductDetailsImage({
-      image: URL.createObjectURL(file),
-      name: file.name
+    productDetailsElements.images[i].container.addEventListener("drop", (event) => {
+      stopDefaultBehavior(event);
+      productDetailsElements.images[i].container.classList.remove("border-indigo-600");
+
+      const dt = event.dataTransfer;
+      const file = dt.files[0];
+
+      productDetailsElements.images[i].cover.innerHTML = createProductDetailsImage({
+        image: URL.createObjectURL(file),
+        name: file.name
+      });
+
+      if (i === 0) {
+        productPreviewElements.image.innerHTML = createProductPreviewImage({
+          image: URL.createObjectURL(file),
+          name: file.name
+        });
+      }
     });
-  });
 
-  productDetailsElements.container.addEventListener("dragover", (event) => {
-    stopDefaultBehavior(event);
-    productDetailsElements.container.classList.add("border-indigo-600");
-  });
+    productDetailsElements.images[i].container.addEventListener("dragover", (event) => {
+      stopDefaultBehavior(event);
+      productDetailsElements.images[i].container.classList.add("border-indigo-600");
+    });
 
-  productDetailsElements.container.addEventListener("dragleave", (event) => {
-    stopDefaultBehavior(event);
-    productDetailsElements.container.classList.remove("border-indigo-600");
-  });
+    productDetailsElements.images[i].container.addEventListener("dragleave", (event) => {
+      stopDefaultBehavior(event);
+      productDetailsElements.images[i].container.classList.remove("border-indigo-600");
+    });
 
-  productDetailsElements.container.addEventListener("dragenter", (event) => {
-    stopDefaultBehavior(event);
-  });
+    productDetailsElements.images[i].container.addEventListener("dragenter", (event) => {
+      stopDefaultBehavior(event);
+    });
+  }
 };

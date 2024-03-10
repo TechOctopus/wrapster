@@ -17,7 +17,6 @@
           theme: {
             extend: {
               colors: {
-                clifford: '#da373d',
                 primary: {
                   50: 'var(--color-primary-50)',
                   100: 'var(--color-primary-100)',
@@ -108,6 +107,15 @@
         </nav>
     </header>
     <main class="flex w-full flex-col bg-white">
+        <!-- Warning -->
+        <section class="mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8 mt-6">
+            <div class="bg-amber-100 rounded-md p-4">
+                <p>
+                    ⚠️ This project is designed for educational purposes and is not a functioning e-commerce platform. All data used is sourced from <a class="font-bold" href="https://dbrand.com" aria-label="dbrand">dbrand</a>.
+                    If you wish to make purchases, please visit the official website. For any inquiries regarding the data in this project, kindly reach out to <a class="font-bold" href="https://dbrand.com" aria-label="dbrand">dbrand</a>.
+                </p>
+            </div>
+        </section>
         <!-- Hero section -->
         <section class="mx-auto w-full max-w-[1200px] overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
             <div class="w-full gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
@@ -176,30 +184,26 @@
             </div>
         </section>
         <!-- Trending products -->
-        <section
-            class="mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8"
-        >
+        <section class="mt-4 mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8">
             <div class="md:flex md:items-center md:justify-between">
                 <h2 class="text-2xl font-bold tracking-tight text-gray-900">
                     Trending products
                 </h2>
                 <a
-                    href="./products.html"
-                    class="hidden text-sm font-medium text-primary-600 hover:text-primary-500 md:block"
+                        href="./products.html"
+                        class="hidden text-sm font-medium text-primary-600 hover:text-primary-500 md:block"
                 >
                     Other products
                     <span aria-hidden="true"> &rarr;</span>
                 </a>
             </div>
             <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
-                <div class="group relative">
-                    <div class="bg-w h-56 w-full overflow-hidden rounded-md p-4 group-hover:opacity-75 lg:h-72 xl:h-80">
+                <div class="group relative cursor-pointer">
+                    <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
                         <img
-                            width="400"
-                            height="400"
                             src="./public/ZIdo5kxfdwrI_XBt.webp"
                             alt="Ultramatte Teardown"
-                            class="object-fit h-full w-full object-contain object-center"
+                            class="object-fit w-full aspect-[1/1] object-contain object-center"
                         />
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700">
@@ -208,46 +212,32 @@
                             Ultramatte Teardown
                         </a>
                     </h3>
-                    <p class="mt-1 text-sm text-gray-500">
-                        Designed by Zack. Built by Robots.
-                    </p>
-                    <p class="mt-1 text-sm font-medium text-gray-900">
-                        $24.95
-                    </p>
+                    <p class="mt-1 text-sm text-gray-500">Designed by Zack. Built by Robots.</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">$24.95</p>
                 </div>
-                <div class="group relative">
-                    <div
-                        class="h-56 w-full overflow-hidden rounded-md p-4 group-hover:opacity-75 lg:h-72 xl:h-80"
-                    >
+                <div class="group relative cursor-pointer">
+                    <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
                         <img
-                            width="400"
-                            height="400"
                             src="./public/b1kBnufl0WKE2rNO.webp"
                             alt="TEARDOWN"
-                            class="object-fit h-full w-full object-contain object-center"
+                            class="object-fit w-full aspect-[1/1] object-contain object-center"
                         />
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700">
                         <a href="./product.html">
                             <span class="absolute inset-0"></span>
-                            TEARDOWN
+                            Teardown
                         </a>
                     </h3>
-                    <p class="mt-1 text-sm text-gray-500">
-                        Designed by Zack. Built by Robots.
-                    </p>
-                    <p class="mt-1 text-sm font-medium text-gray-900">
-                        $31.95
-                    </p>
+                    <p class="mt-1 text-sm text-gray-500">Designed by Zack. Built by Robots.</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">$31.95</p>
                 </div>
-                <div class="group relative">
-                    <div class="h-56 w-full overflow-hidden rounded-md p-4 group-hover:opacity-75 lg:h-72 xl:h-80">
+                <div class="group relative cursor-pointer">
+                    <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
                         <img
-                            width="400"
-                            height="400"
                             src="./public/GM0g_CTK6q_BkzO7.webp"
                             alt="Real Brown Leather"
-                            class="object-fit h-full w-full object-contain object-center"
+                            class="object-fit w-full aspect-[1/1] object-contain object-center"
                         />
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700">
@@ -256,21 +246,15 @@
                             Real Brown Leather
                         </a>
                     </h3>
-                    <p class="mt-1 text-sm text-gray-500">
-                        Full-grain Brown Leather. Cows died for this.
-                    </p>
-                    <p class="mt-1 text-sm font-medium text-gray-900">
-                        $49.95
-                    </p>
+                    <p class="mt-1 text-sm text-gray-500">Full-grain Brown Leather.</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">$49.95</p>
                 </div>
-                <div class="group relative">
-                    <div class="h-56 w-full overflow-hidden rounded-md p-4 group-hover:opacity-75 lg:h-72 xl:h-80">
+                <div class="group relative cursor-pointer">
+                    <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
                         <img
-                            width="400"
-                            height="400"
-                            src="./public/L25o81z9ov-tGZlK.webp"
-                            alt="Solstice"
-                            class="object-fit h-full w-full object-contain object-center"
+                                src="./public/L25o81z9ov-tGZlK.webp"
+                                alt="Solstice"
+                                class="object-fit w-full aspect-[1/1] object-contain object-center"
                         />
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700">
@@ -279,12 +263,8 @@
                             Solstice
                         </a>
                     </h3>
-                    <p class="mt-1 text-sm text-gray-500">
-                        Hot and cold, but mostly cold.
-                    </p>
-                    <p class="mt-1 text-sm font-medium text-gray-900">
-                        $24.95
-                    </p>
+                    <p class="mt-1 text-sm text-gray-500">Hot and cold, but mostly cold.</p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">$24.95</p>
                 </div>
             </div>
 
@@ -324,13 +304,26 @@
                 </div>
             </div>
         </section>
-        <br>
-        <br>
-        <br>
     </main>
     <footer class="h-16 w-full bg-gray-100">
-        <div class="mx-auto flex h-full w-full max-w-[1200px] items-center justify-center px-6">
-            <p>Made with ❤️</p>
+        <div class="mx-auto flex h-full w-full max-w-[1200px] items-center justify-between px-6">
+            <p class="text-sm">Made with ❤️ by <a href="https://github.com/TechOctopus">Heorhi Davydau</a> and <a href="https://github.com/VladGusiev">Vladislav Gusiev</a></p>
+            <a href="https://github.com/TechOctopus/wrapster">
+                <span class="sr-only">GitHub</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                    <path d="M9 18c-4.51 2-5-2-7-2"/>
+                </svg>
+            </a>
         </div>
     </footer>
 </body>

@@ -122,7 +122,7 @@ const createProductsHTML = (product) => `
   <div class="group relative">
       <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
           <img
-              src="${product.image}"
+              src="${product.image[0]}"
               alt="${product.name}"
               class="object-fit w-full aspect-[1/1] object-contain object-center"
           />
