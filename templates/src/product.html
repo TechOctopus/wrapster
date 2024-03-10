@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" href="./apple-touch-icon.png">
     <!-- For production -->
     <link href="./min/global.min.css" rel="stylesheet">
+    <script src="./min/product.min.js" type="module"></script>
     <!-- ! For Development Only ! -->
     <!-- Tailwind CSS -->
     <!-- <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
@@ -17,7 +18,6 @@
           theme: {
             extend: {
               colors: {
-                clifford: '#da373d',
                 primary: {
                   50: 'var(--color-primary-50)',
                   100: 'var(--color-primary-100)',
@@ -53,11 +53,16 @@
             }
         }
     </style> -->
+    <!-- Scripts -->
+    <!-- <script src="./js/product.js" type="module"></script> -->
     <!-- ! For Development Only ! -->
+    <meta name="description" content="Best covers, cases, and accessories for your incredible devices." />
+    <meta name="keywords" content="Wrapster, e-commerce, modern, covers, cases, accessories" />
+    <meta name="author" content="Wrapster" />
     <title>Wrapster | Product</title>
 </head>
 <body class="bg-gray-100">
-    <header class="sticky top-0 z-10 h-16 w-full bg-gray-100  backdrop-blur-xl bg-opacity-80 shadow-md">
+    <header class="sticky top-0 z-40 h-16 w-full bg-gray-100 backdrop-blur-xl bg-opacity-80 shadow-md">
         <nav class="mx-auto flex h-full w-full max-w-[1200px] items-center gap-4 px-6">
             <a
                 class="flex flex-shrink-0 items-center"
@@ -105,37 +110,24 @@
         </nav>
     </header>
     <main class="flex min-h-svh w-full flex-col bg-white">
-        <!-- Product details -->
+        <!-- Product -->
         <section class="mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+            <!-- Product details -->
             <div class="lg:max-w-lg lg:self-end">
-                <div class="mt-4">
-                    <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                        TEARDOWN
-                    </h1>
-                </div>
+                <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">MAGMA</h1>
                 <section aria-labelledby="information-heading" class="mt-4">
-                    <h2 id="information-heading" class="sr-only">
-                        Product information
-                    </h2>
-
+                    <h2 id="information-heading" class="sr-only">Product information</h2>
                     <div class="flex items-center">
-                        <p class="text-lg text-gray-900 sm:text-xl">
-                            $24.95
-                        </p>
+                        <p class="text-lg text-gray-900 sm:text-xl">$31.95</p>
                         <p class="ml-4 border-l border-gray-300 pl-4 text-sm text-gray-500">
-                            Designed by Zack. Built by Robots.
+                            Burning a hole in your wallet.
                         </p>
                     </div>
-
                     <div class="mt-4 space-y-6">
                         <p class="text-base text-gray-500">
-                            Made in collaboration with JerryRigEverything,
-                            our Teardown skin uses an optically clear gloss
-                            finish to ensure you see every dollar you
-                            wasted.
+                            Made in collaboration with Ali Abdaal. Apparently it's "impractical" to mail lava to your house, so this is the next best thing.
                         </p>
                     </div>
-
                     <div class="mt-6 flex items-center">
                         <svg
                             class="h-5 w-5 flex-shrink-0 text-green-500"
@@ -153,21 +145,108 @@
                             In stock and ready to ship
                         </p>
                     </div>
+                    <label for="quantity-0" class="sr-only">Quantity</label>
+                    <select id="quantity-0" name="quantity-0" class="mt-6 max-w-full rounded-md border border-gray-300 py-1.5 text-left text-base font-medium leading-5 text-gray-700 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500 sm:text-sm">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
                 </section>
             </div>
-
-            <div class="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
-                <div
-                    class="aspect-h-1 aspect-w-1 h-96 overflow-hidden rounded-lg"
-                >
-                    <img
-                        src="https://cdn.db.io/sites/default/files/dba/skin-customizer/iphone-15-pro-max/Q6VXIQiDAxc3vpOu.jpg"
-                        alt=" Model wearing light green backpack with black canvas straps and front zipper pouch."
-                        class="h-full w-full object-contain object-center"
-                    />
+            <!-- Product image carousel -->
+            <div class="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center bg-gray-50 p-4 rounded-2xl">
+                <div id="carousel-example" class="relative w-full">
+                    <!-- Carousel wrapper -->
+                    <div class="relative h-52 sm:h-96 overflow-hidden rounded-lg">
+                        <!-- Item 1 -->
+                        <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
+                            <img
+                                src="./public/QChCogWqwM3CaFhB.webp"
+                                class="absolute left-1/2 top-1/2 block max-h-full -translate-x-1/2 -translate-y-1/2"
+                                alt="Magma back"
+                            />
+                        </div>
+                        <!-- Item 2 -->
+                        <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
+                            <img
+                                src="./public/jSBW2ILEEc_7a3tS.webp"
+                                class="absolute left-1/2 top-1/2 block max-h-full -translate-x-1/2 -translate-y-1/2"
+                                alt="Magma front"
+                            />
+                        </div>
+                    </div>
+                    <!-- Slider indicators -->
+                    <div class="absolute bottom-5 left-1/2 z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse">
+                        <button
+                            id="carousel-indicator-1"
+                            type="button"
+                            class="h-3 w-3 rounded-full"
+                            aria-current="true"
+                            aria-label="Slide 1"
+                        >
+                            <span class="sr-only">Slide 1</span>
+                        </button>
+                        <button
+                            id="carousel-indicator-2"
+                            type="button"
+                            class="h-3 w-3 rounded-full"
+                            aria-current="false"
+                            aria-label="Slide 2"
+                        >
+                            <span class="sr-only">Slide 2</span>
+                        </button>
+                    </div>
+                    <!-- Slider controls -->
+                    <button
+                        id="data-carousel-prev"
+                        type="button"
+                        class="group absolute left-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
+                    >
+                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 group-hover:bg-primary-400 group-focus-visible:ring-2 group-focus-visible:ring-offset-2 group-focus-visible:ring-primary-500">
+                            <svg
+                                 class="text-white"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="24" height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                            >
+                                <path d="m15 18-6-6 6-6"/>
+                            </svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+                    <button
+                            id="data-carousel-next"
+                            type="button"
+                            class="group absolute right-0 top-0 z-30 flex h-full cursor-pointer items-center justify-center px-4 focus:outline-none"
+                    >
+                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-600 group-hover:bg-primary-400 group-focus-visible:ring-2 group-focus-visible:ring-offset-2 group-focus-visible:ring-primary-500">
+                            <svg
+                                class="text-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24" height="24"
+                                viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
                 </div>
             </div>
-
             <a
                 href="./cart.html"
                 class="mt-10 flex h-10 w-full items-center justify-center rounded-md border border-transparent bg-primary-600 px-8 py-3 text-base font-medium text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-gray-50"
@@ -176,57 +255,200 @@
             </a>
         </section>
         <!-- Product overview -->
-        <section class="mx-auto mt-16 w-full max-w-[1200px] space-y-16 px-4 py-8 sm:px-6 lg:px-8">
-            <div class="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:gap-x-8">
-                <div class="lg:col-start-2 lg:row-start-1 lg:mt-0 p-6">
-                    <h4 class="text-lg font-medium text-gray-900">
-                        SCRATCH PROTECTION
-                    </h4>
-                    <p class="mt-2 text-sm text-gray-500">
-                        In the future, when keying cars is impossible
-                        because nobody's allowed to drive anymore, roving
-                        gangs of vandals will break into your home and
-                        scratch your electronics. Prepare yourself for this
-                        doomsday scenario with our iPhone 15 Pro Max skins.
-                    </p>
+        <section class="mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+                    Overview
+                </h2>
+            </div>
+            <dl class="mx-auto mt-8 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:max-w-none lg:grid-cols-3 lg:gap-x-8">
+                <div class="border-t border-gray-200 pt-4">
+                    <dt class="font-medium text-gray-900 flex items-center gap-3">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z"/>
+                            <path d="m14.5 12.5 2-2"/>
+                            <path d="m11.5 9.5 2-2"/>
+                            <path d="m8.5 6.5 2-2"/>
+                            <path d="m17.5 15.5 2-2"/>
+                        </svg>
+                        THIN
+                    </dt>
+                    <dd class="mt-2 text-sm text-gray-500">Let's play a game. Assuming you're not bald, reach up and rip out exactly two pieces of hair. Next, twist them together. Congratulations: you now have an exact representation of how thin our skins are. Also, you're one step closer to baldness. Checkmate, Rogaine.</dd>
                 </div>
-                <div class="flex-auto lg:col-start-1 lg:row-start-1">
-                    <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
-                        <img
-                            src="https://cdn.db.io/images/dlg3xw1d/production/ef574fb5d508d2b0ef0fcf5c50d79a29572b5cb3-1750x1750.jpg"
-                            alt="Detail of zipper pull with tan leather and silver rivet."
-                            class="h-96 w-full object-cover object-center"
-                        />
-                    </div>
+                <div class="border-t border-gray-200 pt-4">
+                    <dt class="font-medium text-gray-900 flex items-center gap-3">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="19" cy="19" r="2"/>
+                            <circle cx="5" cy="5" r="2"/>
+                            <path d="M5 7v12h12"/>
+                            <path d="m5 19 6-6"/>
+                        </svg>
+                        PRECISE
+                    </dt>
+                    <dd class="mt-2 text-sm text-gray-500">Every dbrand skin is lovingly hand-crafted by one of the industrial-grade cutting machines that you see here. It costs more than your student loan and cuts within 1/1000th of a millimeter in precision. Remember: it's only overkill if you can't afford it.</dd>
+                </div>
+                <div class="border-t border-gray-200 pt-4">
+                    <dt class="font-medium text-gray-900 flex items-center gap-3">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="m15 5 4 4"/>
+                            <path d="M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13"/>
+                            <path d="m8 6 2-2"/>
+                            <path d="m2 22 5.5-1.5L21.17 6.83a2.82 2.82 0 0 0-4-4L3.5 16.5Z"/>
+                            <path d="m18 16 2-2"/>
+                            <path d="m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17"/>
+                        </svg>
+                        FACTORY FIT
+                    </dt>
+                    <dd class="mt-2 text-sm text-gray-500">The result from those ludicrously expensive cutting machines we just told you about? You're looking at it. If we told you our skins fit like a glove, we'd be giving gloves too much credit.</dd>
+                </div>
+                <div class="border-t border-gray-200 pt-4">
+                    <dt class="font-medium text-gray-900 flex items-center gap-3">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+                            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+                            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+                            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+                        </svg>
+                        TEXTURED
+                    </dt>
+                    <dd class="mt-2 text-sm text-gray-500">Nothing in your life feels good. You constantly drop the ball. Your relentless anxiety produces enough hand sweat to make Prince Andrew lie on national television. Our premium, textured skins won't solve any of that, but they'll make your hardware feel immaculate.</dd>
+                </div>
+                <div class="border-t border-gray-200 pt-4">
+                    <dt class="font-medium text-gray-900 flex items-center gap-3">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                        SCRATCH PROTECTION
+                    </dt>
+                    <dd class="mt-2 text-sm text-gray-500">In the future, when keying cars is impossible because nobody's allowed to drive anymore, roving gangs of vandals will break into your home and scratch your electronics. Prepare yourself for this doomsday scenario with our skins.</dd>
+                </div>
+                <div class="border-t border-gray-200 pt-4">
+                    <dt class="font-medium text-gray-900 flex items-center gap-3">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="6" cy="15" r="4"/>
+                            <circle cx="18" cy="15" r="4"/>
+                            <path d="M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/>
+                            <path d="M2.5 13 5 7c.7-1.3 1.4-2 3-2"/>
+                            <path d="M21.5 13 19 7c-.7-1.3-1.5-2-3-2"/>
+                        </svg>
+                        NO RESIDUE
+                    </dt>
+                    <dd class="mt-2 text-sm text-gray-500">If there's one thing that a life of crime has taught us, it's that you never want to leave evidence. This principle carries over to our skins, where removal is guaranteed to leave behind zero adhesive residue. dbrand: it's like getting away with murder.</dd>
+                </div>
+            </dl>
+        </section>
+        <!-- More products -->
+        <section class="mt-4 mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <h2 class="text-2xl font-bold tracking-tight text-gray-900">
+                    More products
+                </h2>
+                <a
+                    href="./products.html"
+                    class="hidden text-sm font-medium text-primary-600 hover:text-primary-500 md:block"
+                >
+                    Other products
+                    <span aria-hidden="true"> &rarr;</span>
+                </a>
+            </div>
+            <div
+                id="more-products"
+                class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8"
+            >
+                <!-- Products -->
+                <div class="col-span-full bg-gray-50 w-full h-[21.5rem] rounded-lg flex items-center justify-center">
+                    <svg class="animate-spin h-5 w-5 mr-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                    </svg>
+                    <span>Loading</span>
                 </div>
             </div>
-            <div class="flex flex-col-reverse lg:grid lg:grid-cols-2 lg:gap-x-8">
-                <div class="lg:col-start-1 lg:row-start-1 lg:mt-0 p-6">
-                    <h4 class="text-lg font-medium text-gray-900">THIN</h4>
-                    <p class="mt-2 text-sm text-gray-500">
-                        Let's play a game. Assuming you're not bald, reach
-                        up and rip out exactly two pieces of hair. Next,
-                        twist them together. Congratulations: you now have
-                        an exact representation of how thin our skins are.
-                        Also, you're one step closer to baldness. Checkmate,
-                        Rogaine.
-                    </p>
-                </div>
-                <div class="flex-auto lg:row-start-1">
-                    <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
-                        <img
-                            src="https://cdn.db.io/images/dlg3xw1d/production/e2be89b0fea53a800927812d54ac75a9863a3806-1750x1750.jpg"
-                            alt="White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull."
-                            class="h-96 w-full object-cover object-center"
-                        />
-                    </div>
-                </div>
+            <div class="mt-8 text-sm md:hidden">
+                <a
+                    href="./products.html"
+                    class="font-medium text-primary-600 hover:text-primary-500"
+                >
+                    Other products
+                    <span aria-hidden="true"> &rarr;</span>
+                </a>
             </div>
         </section>
     </main>
     <footer class="h-16 w-full bg-gray-100">
-        <div class="mx-auto flex h-full w-full max-w-[1200px] items-center justify-center px-6">
-            <p>Made with ❤️</p>
+        <div class="mx-auto flex h-full w-full max-w-[1200px] items-center justify-between px-6">
+            <p class="text-sm">Made with ❤️ by <a href="https://github.com/TechOctopus">Heorhi Davydau</a> and <a href="https://github.com/VladGusiev">Vladislav Gusiev</a></p>
+            <a href="https://github.com/TechOctopus/wrapster">
+                <span class="sr-only">GitHub</span>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+                    <path d="M9 18c-4.51 2-5-2-7-2"/>
+                </svg>
+            </a>
         </div>
     </footer>
 </body>
