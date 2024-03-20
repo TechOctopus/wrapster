@@ -17,7 +17,7 @@ A Robot
 ---
 ## Link to Github Page
 
-[Link to Github page](techoctopus.github.io/wrapster/)
+[Link to Github page](https://techoctopus.github.io/wrapster/)
 
 ---
 ## Figma prototype
