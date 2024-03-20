@@ -1,14 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#4f46e5">
+    <meta name="theme-color" content="#4f46e5" />
     <link rel="icon" href="./favicon.svg" />
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <!-- For production -->
-    <link href="./min/global.min.css" rel="stylesheet">
+    <link href="./min/global.min.css" rel="stylesheet" />
     <!-- ! For Development Only ! -->
     <!-- Tailwind CSS -->
     <!-- <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
@@ -58,32 +59,23 @@
     <meta name="author" content="Wrapster" />
     <title>Wrapster | Home</title>
 </head>
+
 <body class="bg-gray-100">
-    <header class="sticky top-0 z-10 h-16 w-full bg-gray-100  backdrop-blur-xl bg-opacity-80 shadow-md">
+    <header class="sticky top-0 z-10 h-16 w-full bg-gray-100 bg-opacity-80 shadow-md backdrop-blur-xl">
         <nav class="mx-auto flex h-full w-full max-w-[1200px] items-center gap-4 px-6">
-            <a
-                class="flex flex-shrink-0 items-center"
-                href="./index.html"
-                aria-label="Home"
-            >
-                <svg
-                    class="fill-current text-primary-500"
-                    width="50px"
-                    height="50px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 1512 982"
-                >
-                  <path
-                      fill="CurrentColor"
-                      fill-rule="evenodd"
-                      d="M794.465 349.928c.353-3.26.535-6.573.535-9.928 0-50.258-40.742-91-91-91s-91 40.742-91 91c0 .79.01 1.577.03 2.361-13.626 105.92-96.445 190.173-201.668 205.972-2.591-.22-5.214-.333-7.862-.333-50.534 0-91.5 40.966-91.5 91.5s40.966 91.5 91.5 91.5c3.218 0 6.397-.166 9.53-.49 205.778-10.097 370.887-174.922 381.435-380.582ZM495 341c0 49.706-40.294 90-90 90s-90-40.294-90-90 40.294-90 90-90 90 40.294 90 90Zm704 1c0 3.355-.18 6.668-.54 9.929-10.54 205.659-175.65 370.483-381.43 380.581-3.132.324-6.312.49-9.53.49-50.534 0-91.5-40.966-91.5-91.5s40.966-91.5 91.5-91.5c2.648 0 5.271.113 7.862.333 105.223-15.799 188.038-100.052 201.668-205.972-.02-.784-.03-1.572-.03-2.361 0-50.258 40.74-91 91-91s91 40.742 91 91Z"
-                      clip-rule="evenodd"
-                  />
+            <a class="flex flex-shrink-0 items-center" href="./index.html" aria-label="Home">
+                <svg class="text-primary-500 fill-current" width="50px" height="50px" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1512 982">
+                    <path fill="CurrentColor" fill-rule="evenodd"
+                        d="M794.465 349.928c.353-3.26.535-6.573.535-9.928 0-50.258-40.742-91-91-91s-91 40.742-91 91c0 .79.01 1.577.03 2.361-13.626 105.92-96.445 190.173-201.668 205.972-2.591-.22-5.214-.333-7.862-.333-50.534 0-91.5 40.966-91.5 91.5s40.966 91.5 91.5 91.5c3.218 0 6.397-.166 9.53-.49 205.778-10.097 370.887-174.922 381.435-380.582ZM495 341c0 49.706-40.294 90-90 90s-90-40.294-90-90 40.294-90 90-90 90 40.294 90 90Zm704 1c0 3.355-.18 6.668-.54 9.929-10.54 205.659-175.65 370.483-381.43 380.581-3.132.324-6.312.49-9.53.49-50.534 0-91.5-40.966-91.5-91.5s40.966-91.5 91.5-91.5c2.648 0 5.271.113 7.862.333 105.223-15.799 188.038-100.052 201.668-205.972-.02-.784-.03-1.572-.03-2.361 0-50.258 40.74-91 91-91s91 40.742 91 91Z"
+                        clip-rule="evenodd" />
                 </svg>
             </a>
             <ul class="flex items-center space-x-4">
                 <li><a href="./index.html" aria-label="Home">Home</a></li>
-                <li><a href="./products.html" aria-label="Products">Products</a></li>
+                <li>
+                    <a href="./products.html" aria-label="Products">Products</a>
+                </li>
             </ul>
             <div class="ml-auto flex items-center space-x-6">
                 <a class="flex h-5 w-5 items-center justify-center" href="./sign-in.html" aria-label="Sign In">
@@ -108,11 +100,17 @@
     </header>
     <main class="flex w-full flex-col bg-white">
         <!-- Warning -->
-        <section class="mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8 mt-6">
-            <div class="bg-amber-100 rounded-md p-4">
+        <section class="mx-auto mt-6 w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8">
+            <div class="rounded-md bg-amber-100 p-4">
                 <p>
-                    ⚠️ This project is designed for educational purposes and is not a functioning e-commerce platform. All data used is sourced from <a class="font-bold" href="https://dbrand.com" aria-label="dbrand">dbrand</a>.
-                    If you wish to make purchases, please visit the official website. For any inquiries regarding the data in this project, kindly reach out to <a class="font-bold" href="https://dbrand.com" aria-label="dbrand">dbrand</a>.
+                    ⚠️ This project is designed for educational purposes and
+                    is not a functioning e-commerce platform. All data used
+                    is sourced from
+                    <a class="font-bold" href="https://dbrand.com" aria-label="dbrand">dbrand</a>. If you wish to make
+                    purchases, please visit the
+                    official website. For any inquiries regarding the data
+                    in this project, kindly reach out to
+                    <a class="font-bold" href="https://dbrand.com" aria-label="dbrand">dbrand</a>.
                 </p>
             </div>
         </section>
@@ -130,81 +128,61 @@
                         exploration. It's literal rocket science.
                     </p>
                     <div class="mt-10 flex items-center gap-x-6">
-                        <a
-                            href="./products.html"
-                            class="rounded-md bg-primary-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
-                        >
+                        <a href="./products.html"
+                            class="bg-primary-600 hover:bg-primary-500 focus-visible:outline-primary-600 rounded-md px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
                             Check it out
                         </a>
                     </div>
                 </div>
                 <div class="mt-14 hidden justify-end gap-8 sm:-mt-64 sm:flex sm:pl-10 lg:mt-0 lg:pl-10">
-                    <div class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
+                    <div
+                        class="ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-last lg:pt-36 xl:order-none xl:pt-80">
                         <div class="relative">
-                            <img
-                                src="./public/GsBCkzsvtKa-gVh7.webp"
-                                alt="X-RAY (DARK)"
-                                class="aspect-[2/3] w-full rounded-xl object-contain"
-                            />
+                            <img src="./public/GsBCkzsvtKa-gVh7.webp" alt="X-RAY (DARK)"
+                                class="aspect-[2/3] w-full rounded-xl object-contain" />
                         </div>
                     </div>
                     <div class="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                         <div class="relative">
-                            <img
-                                src="./public/KfupH2fPjhNnj1vh.webp"
-                                alt="X-RAY (DARK)"
-                                class="aspect-[2/3] w-full rounded-xl object-contain"
-                            />
+                            <img src="./public/KfupH2fPjhNnj1vh.webp" alt="X-RAY (DARK)"
+                                class="aspect-[2/3] w-full rounded-xl object-contain" />
                         </div>
                         <div class="relative">
-                            <img
-                                src="./public/7QMC8tXkNKZm9YTY.webp"
-                                alt="X-RAY (DARK)"
-                                class="aspect-[2/3] w-full rounded-xl object-contain"
-                            />
+                            <img src="./public/7QMC8tXkNKZm9YTY.webp" alt="X-RAY (DARK)"
+                                class="aspect-[2/3] w-full rounded-xl object-contain" />
                         </div>
                     </div>
                     <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                         <div class="relative">
-                            <img
-                                src="./public/J5UBOu9roDcKS-zl.webp"
-                                alt="X-RAY (DARK)"
-                                class="aspect-[2/3] w-full rounded-xl object-contain"
-                            />
+                            <img src="./public/J5UBOu9roDcKS-zl.webp" alt="X-RAY (DARK)"
+                                class="aspect-[2/3] w-full rounded-xl object-contain" />
                         </div>
                         <div class="relative">
-                            <img
-                                src="./public/biaTf2Fmvzp6k9LP.webp"
-                                alt="X-RAY (DARK)"
-                                class="aspect-[2/3] w-full rounded-xl object-contain"
-                            />
+                            <img src="./public/biaTf2Fmvzp6k9LP.webp" alt="X-RAY (DARK)"
+                                class="aspect-[2/3] w-full rounded-xl object-contain" />
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Trending products -->
-        <section class="mt-4 mx-auto w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8">
+        <section class="mx-auto mt-4 w-full max-w-[1200px] px-4 py-8 sm:px-6 lg:px-8">
             <div class="md:flex md:items-center md:justify-between">
                 <h2 class="text-2xl font-bold tracking-tight text-gray-900">
                     Trending products
                 </h2>
-                <a
-                        href="./products.html"
-                        class="hidden text-sm font-medium text-primary-600 hover:text-primary-500 md:block"
-                >
+                <a href="./products.html"
+                    class="text-primary-600 hover:text-primary-500 hidden text-sm font-medium md:block">
                     Other products
                     <span aria-hidden="true"> &rarr;</span>
                 </a>
             </div>
-            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
+            <div
+                class="mt-8 grid grid-cols-1 gap-x-4 gap-y-10 sm:grid-cols-2 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
                 <div class="group relative cursor-pointer">
-                    <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
-                        <img
-                            src="./public/ZIdo5kxfdwrI_XBt.webp"
-                            alt="Ultramatte Teardown"
-                            class="object-fit w-full aspect-[1/1] object-contain object-center"
-                        />
+                    <div class="aspect-[1/1] w-full overflow-hidden rounded-md bg-gray-50 p-4 group-hover:opacity-75">
+                        <img src="./public/ZIdo5kxfdwrI_XBt.webp" alt="Ultramatte Teardown"
+                            class="object-fit aspect-[1/1] w-full object-contain object-center" />
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700">
                         <a href="./product.html">
@@ -212,16 +190,17 @@
                             Ultramatte Teardown
                         </a>
                     </h3>
-                    <p class="mt-1 text-sm text-gray-500">Designed by Zack. Built by Robots.</p>
-                    <p class="mt-1 text-sm font-medium text-gray-900">$24.95</p>
+                    <p class="mt-1 text-sm text-gray-500">
+                        Designed by Zack. Built by Robots.
+                    </p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">
+                        $24.95
+                    </p>
                 </div>
                 <div class="group relative cursor-pointer">
-                    <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
-                        <img
-                            src="./public/b1kBnufl0WKE2rNO.webp"
-                            alt="TEARDOWN"
-                            class="object-fit w-full aspect-[1/1] object-contain object-center"
-                        />
+                    <div class="aspect-[1/1] w-full overflow-hidden rounded-md bg-gray-50 p-4 group-hover:opacity-75">
+                        <img src="./public/b1kBnufl0WKE2rNO.webp" alt="TEARDOWN"
+                            class="object-fit aspect-[1/1] w-full object-contain object-center" />
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700">
                         <a href="./product.html">
@@ -229,16 +208,17 @@
                             Teardown
                         </a>
                     </h3>
-                    <p class="mt-1 text-sm text-gray-500">Designed by Zack. Built by Robots.</p>
-                    <p class="mt-1 text-sm font-medium text-gray-900">$31.95</p>
+                    <p class="mt-1 text-sm text-gray-500">
+                        Designed by Zack. Built by Robots.
+                    </p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">
+                        $31.95
+                    </p>
                 </div>
                 <div class="group relative cursor-pointer">
-                    <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
-                        <img
-                            src="./public/GM0g_CTK6q_BkzO7.webp"
-                            alt="Real Brown Leather"
-                            class="object-fit w-full aspect-[1/1] object-contain object-center"
-                        />
+                    <div class="aspect-[1/1] w-full overflow-hidden rounded-md bg-gray-50 p-4 group-hover:opacity-75">
+                        <img src="./public/GM0g_CTK6q_BkzO7.webp" alt="Real Brown Leather"
+                            class="object-fit aspect-[1/1] w-full object-contain object-center" />
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700">
                         <a href="./product.html">
@@ -246,16 +226,17 @@
                             Real Brown Leather
                         </a>
                     </h3>
-                    <p class="mt-1 text-sm text-gray-500">Full-grain Brown Leather.</p>
-                    <p class="mt-1 text-sm font-medium text-gray-900">$49.95</p>
+                    <p class="mt-1 text-sm text-gray-500">
+                        Full-grain Brown Leather.
+                    </p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">
+                        $49.95
+                    </p>
                 </div>
                 <div class="group relative cursor-pointer">
-                    <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
-                        <img
-                                src="./public/L25o81z9ov-tGZlK.webp"
-                                alt="Solstice"
-                                class="object-fit w-full aspect-[1/1] object-contain object-center"
-                        />
+                    <div class="aspect-[1/1] w-full overflow-hidden rounded-md bg-gray-50 p-4 group-hover:opacity-75">
+                        <img src="./public/L25o81z9ov-tGZlK.webp" alt="Solstice"
+                            class="object-fit aspect-[1/1] w-full object-contain object-center" />
                     </div>
                     <h3 class="mt-4 text-sm text-gray-700">
                         <a href="./product.html">
@@ -263,16 +244,17 @@
                             Solstice
                         </a>
                     </h3>
-                    <p class="mt-1 text-sm text-gray-500">Hot and cold, but mostly cold.</p>
-                    <p class="mt-1 text-sm font-medium text-gray-900">$24.95</p>
+                    <p class="mt-1 text-sm text-gray-500">
+                        Hot and cold, but mostly cold.
+                    </p>
+                    <p class="mt-1 text-sm font-medium text-gray-900">
+                        $24.95
+                    </p>
                 </div>
             </div>
 
             <div class="mt-8 text-sm md:hidden">
-                <a
-                    href="./products.html"
-                    class="font-medium text-primary-600 hover:text-primary-500"
-                >
+                <a href="./products.html" class="text-primary-600 hover:text-primary-500 font-medium">
                     Other products
                     <span aria-hidden="true"> &rarr;</span>
                 </a>
@@ -287,44 +269,37 @@
                 <div class="max-h-[450] max-w-[600px] overflow-hidden rounded-lg bg-white shadow-lg">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2967.495135995839!2d17.07245584724502!3d48.15525544615192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c8bec79f0f3a9%3A0x8b585229fc0ae860!2sFakulta%20informatiky%20a%20informa%C4%8Dn%C3%BDch%20technol%C3%B3gi%C3%AD%20STU!5e0!3m2!1ssk!2ssk!4v1708453700272!5m2!1ssk!2ssk"
-                        width="600"
-                        height="450"
-                        style="border: 0"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                    >
+                        width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-                <div class="ml-6 lg:ml-24">
-                    <h3 class="text-lg font-medium text-gray-900">Office</h3>
-                    <p class="mt-1 text-sm text-gray-500">Fakulta informatiky a informačných technológií STU</p>
-                    <p class="mt-1 text-sm text-gray-500">Ilkovičova 2, 842 16 Bratislava</p>
-                    <p class="mt-1 text-sm text-gray-500">Slovakia</p>
-                </div>
+                <address class="ml-6 lg:ml-24 mt-1 text-sm text-gray-500">
+                    <span class="text-lg font-medium text-gray-900">Office</span> </br>
+                    Fakulta informatiky a informačných technológií</br>
+                    STU Ilkovičova 2, 842 16 Bratislava Slovakia</br>
+                </address>
             </div>
         </section>
     </main>
     <footer class="h-16 w-full bg-gray-100">
         <div class="mx-auto flex h-full w-full max-w-[1200px] items-center justify-between px-6">
-            <p class="text-sm">Made with ❤️ by <a href="https://github.com/TechOctopus">Heorhi Davydau</a> and <a href="https://github.com/VladGusiev">Vladislav Gusiev</a></p>
+            <p class="text-sm">
+                Made with ❤️ by
+                <a href="https://github.com/TechOctopus">Heorhi Davydau</a>
+                and
+                <a href="https://github.com/VladGusiev">Vladyslav Gusiev</a>
+            </p>
             <a href="https://github.com/TechOctopus/wrapster">
                 <span class="sr-only">GitHub</span>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24" height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
-                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                    <path d="M9 18c-4.51 2-5-2-7-2"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                    <path d="M9 18c-4.51 2-5-2-7-2" />
                 </svg>
             </a>
         </div>
     </footer>
 </body>
+
 </html>
