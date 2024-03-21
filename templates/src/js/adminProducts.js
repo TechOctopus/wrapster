@@ -1,4 +1,4 @@
-import { products } from "../data/data.js";
+import { products } from "../data/products.js";
 
 const showProducts = () => {
   const allProductsElement = document.getElementById("all-products");
@@ -8,7 +8,7 @@ const showProducts = () => {
     const productElement = document.createElement("li");
     productElement.className = "flex py-6 sm:py-10";
     productElement.innerHTML = `
-          <div class="flex gap-3">
+          <div class="flex flex-col sm:flex-row gap-3">
               <img 
                   src="${product.image[0]}"
                   alt="${product.name + "_0"}"
@@ -25,10 +25,10 @@ const showProducts = () => {
               <div>
                   <div class="flex justify-between sm:grid sm:grid-cols-2">
                       <div class="pr-6">
-                          <h3 class="text-md">${product.name}</h3>
-                          <h2 class="text-sm">${product.label}</h2>
-                          <p class="mt-1 text-sm text-gray-500">${product.description}</p>
-                          <p class="mt-1 text-sm text-gray-500">${product.model}</p>
+                          <h3 class="text-md">${product.collection.name}</h3>
+                          <h2 class="text-sm">${product.collection.label}</h2>
+                          <p class="hidden sm:block mt-1 text-sm text-gray-500">${product.collection.description}</p>
+                          <p class="mt-1 text-sm text-gray-500">${product.device}</p>
                       </div>
 
                       <p class="text-right text-sm font-medium text-gray-900">$${product.price}</p>

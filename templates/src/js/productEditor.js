@@ -1,3 +1,5 @@
+import { products } from "../data/products.js";
+
 const createProductDetailsImage = (product) => `
   <img
       width="20"
@@ -27,11 +29,10 @@ const createProductPreviewImage = (product) => `
 
 const initDetailsElements = (product) => {
   const productDetailsElements = {
-    name: document.getElementById("product-name"),
-    label: document.getElementById("product-label"),
+    name: document.getElementById("product-collection"),
     price: document.getElementById("product-price"),
     count: document.getElementById("product-count"),
-    model: document.getElementById("product-model"),
+    device: document.getElementById("product-device"),
     images: [
       {
         container: document.getElementById("product-image-container-0"),
@@ -44,14 +45,17 @@ const initDetailsElements = (product) => {
         cover: document.getElementById("product-image-cover-1"),
       }
     ],
-    description: document.getElementById("product-description")
   };
 
   // If product is undefined, then it's a new product with no details
   if (product !== undefined) {
     Array.from(Object.keys(productDetailsElements)).forEach((key) => {
-      if(["name", "price", "label", "description", "model", "count"].includes(key)) {
+      if(["price", "device", "count"].includes(key)) {
         productDetailsElements[key].value = product[key];
+      }
+
+      if("name" === key) {
+        productDetailsElements[key].value = product.collection.name;
       }
     });
 
@@ -80,8 +84,8 @@ const initPreviewElements = (product) => {
 
   if (product !== undefined) {
     Array.from(Object.keys(productPreviewElements)).forEach((key) => {
-      if(["name", "label"].includes(key)) {
-        productPreviewElements[key].textContent = product[key];
+      if(["name", "label", "description"].includes(key)) {
+        productPreviewElements[key].textContent = product.collection[key];
       }
       if("price" === key) {
         productPreviewElements[key].textContent = product[key].toLocaleString("en-US", {
@@ -109,12 +113,16 @@ export const productEditor = (product) => {
   const productDetailsElements = initDetailsElements(product);
   const productPreviewElements = initPreviewElements(product);
 
-  ["name", "label", "price"].forEach((key) => {
+  ["name", "price"].forEach((key) => {
     productDetailsElements[key].addEventListener("input", (event) => {
-      if (["name", "label"].includes(key)) {
-        event.target.value === "" ?
-          productPreviewElements[key].textContent = "Product " + key :
-          productPreviewElements[key].textContent = event.target.value;
+      if (key === "name") {
+        const collection = products.find((product) => product.collection.name === event.target.value).collection;
+
+        console.log(collection);
+        ["name", "label", "description"].forEach((element) => {
+          console.log(productPreviewElements[element]);
+          productPreviewElements[element].textContent = collection[element];
+        });
       }
       if (key === "price") {
         productPreviewElements[key].textContent = "$" + event.target.value;

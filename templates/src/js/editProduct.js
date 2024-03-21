@@ -1,4 +1,4 @@
-import { products } from "../data/data.js";
+import { products } from "../data/products.js";
 import { productEditor } from "./productEditor.js";
 
 document.addEventListener("DOMContentLoaded", x => {

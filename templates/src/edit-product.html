@@ -111,40 +111,74 @@
             </div>
         </nav>
     </header>
+    <div class="mx-auto w-full max-w-[1200px] p-4 py-2 sm:px-6 lg:px-8">
+        <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+            <a href="./admin-products.html"
+               class="border-indigo-500 text-indigo-600 flex whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium"
+               aria-current="page">
+                Products
+                <span class="bg-indigo-100 text-indigo-600 ml-3 hidden rounded-full py-0.5 px-2.5 text-xs font-medium md:inline-block">23</span>
+            </a>
+            <a href="./admin-collections.html"
+               class="border-transparent text-gray-500 hover:border-gray-200 hover:text-gray-700 flex whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium">
+                Collections
+                <span class="bg-gray-100 text-gray-900 ml-3 hidden rounded-full py-0.5 px-2.5 text-xs font-medium md:inline-block">12</span>
+            </a>
+        </nav>
+    </div>
     <main class="flex w-full flex-col bg-white min-h-svh">
         <!-- Add new product -->
         <section class="mx-auto w-full max-w-[1200px] overflow-hidden px-4 py-8 sm:px-6 lg:px-8">
             <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Edit product</h1>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-10">
                 <form
-                    onsubmit="event.preventDefault();window.location.href = './admin.html';"
+                    onsubmit="event.preventDefault();window.location.href = './admin-products.html';"
                     class="col-span-2"
                 >
                     <h2 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">Product details</h2>
                     <div class="border-b border-gray-900/10 pb-12 mt-6">
                         <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                            <!-- Product image -->
-                            <div class="sm:col-span-6">
-                                <label for="product-name" class="block text-sm font-medium leading-6 text-gray-900">
-                                    Product name
+                            <!-- Product collection -->
+                            <div class="sm:col-span-3">
+                                <label for="product-collection" class="block text-sm font-medium leading-6 text-gray-900">
+                                    Collection
                                 </label>
                                 <div class="mt-2">
-                                    <input
-                                        type="text" name="product-name" id="product-name"
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
-                                    />
+                                    <select
+                                            id="product-collection" name="collection"
+                                            class="block rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary-600  sm:text-sm sm:leading-6 w-full"
+                                    >
+                                        <option>Ultramatte Teardown</option>
+                                        <option>TEARDOWN</option>
+                                        <option>Real Brown Leather</option>
+                                        <option>Solstice</option>
+                                        <option>ACID</option>
+                                        <option>TMNP</option>
+                                        <option>GREEN CAMO</option>
+                                        <option>BLACK CARBON</option>
+                                        <option>DEADQUARTERS</option>
+                                        <option>X-RAY (LIGHT)</option>
+                                        <option>MAGMA</option>
+                                        <option>OBSIDIAN</option>
+                                    </select>
                                 </div>
                             </div>
-                            <!-- Product label -->
+                            <!-- Product device -->
                             <div class="sm:col-span-3">
-                                <label for="product-label" class="block text-sm font-medium leading-6 text-gray-900">
-                                    Product label
+                                <label for="product-device" class="block text-sm font-medium leading-6 text-gray-900">
+                                    Device
                                 </label>
                                 <div class="mt-2">
-                                    <input
-                                        type="text" name="product-label" id="product-label"
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
-                                    />
+                                    <select
+                                            id="product-device" name="device"
+                                            class="block rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary-600  sm:text-sm sm:leading-6 w-full"
+                                    >
+                                        <option>iphone-15-pro-max</option>
+                                        <option>macbook-pro-16-2023-m3</option>
+                                        <option>ipad-pro-129-2022-gen-6</option>
+                                        <option>pixel-8-pro</option>
+                                        <option>galaxy-s24-ultra</option>
+                                    </select>
                                 </div>
                             </div>
                             <!-- Product price -->
@@ -171,38 +205,8 @@
                                     />
                                 </div>
                             </div>
-                            <!-- Product model -->
-                            <div class="sm:col-span-3">
-                                <label for="product-model" class="block text-sm font-medium leading-6 text-gray-900">
-                                    Product model
-                                </label>
-                                <div class="mt-2">
-                                    <select
-                                        id="product-model" name="model"
-                                        class="block rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary-600  sm:text-sm sm:leading-6 w-full"
-                                    >
-                                        <option>iphone-15-pro-max</option>
-                                        <option>macbook-pro-16-2023-m3</option>
-                                        <option>ipad-pro-129-2022-gen-6</option>
-                                        <option>pixel-8-pro</option>
-                                        <option>galaxy-s24-ultra</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <!-- Product description -->
-                            <div class="col-span-full">
-                                <label for="product-description" class="block text-sm font-medium leading-6 text-gray-900">
-                                    Description
-                                </label>
-                                <div class="mt-2">
-                                    <textarea
-                                        id="product-description" name="description" rows="5"
-                                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6"
-                                    ></textarea>
-                                </div>
-                            </div>
                             <!-- Product cover photo -->
-                            <div class="sm:col-span-3">
+                            <div class="col-span-full">
                                 <p class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Cover photo</p>
                                 <div class="mt-2 sm:col-span-2">
                                     <div
@@ -228,8 +232,8 @@
                                 </div>
                             </div>
                             <!-- Product secondary photo -->
-                            <div class="sm:col-span-3">
-                                <p class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Secondary photos</p>
+                            <div class="col-span-full">
+                                <p class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">Secondary photo</p>
                                 <div class="mt-2 sm:col-span-2">
                                     <div
                                             id="product-image-container-1"
@@ -273,7 +277,7 @@
                 </form>
                 <div class="w-full">
                     <h2 class="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">Preview</h2>
-                    <p class="block text-sm font-medium leading-6 text-gray-900 mt-6">Preview card</p>
+                    <p class="block text-sm font-medium leading-6 text-gray-900 mt-6">Card preview</p>
                     <div class="mx-auto w-full border border-gray-200 rounded-md p-6 mt-2">
                         <div class="group relative">
                             <div class="bg-w h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80 p-4" id="preview-image">
@@ -284,10 +288,17 @@
                                     <span>Loading</span>
                                 </div>
                             </div>
-                            <h3 class="mt-4 text-sm text-gray-700" id="preview-name">Preview name</h3>
-                            <p class="mt-1 text-sm text-gray-500" id="preview-label">Preview label</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900" id="preview-price">Preview price</p>
+                            <h3 class="mt-4 text-sm text-gray-700" id="preview-name">Name preview</h3>
+                            <p class="mt-1 text-sm text-gray-500" id="preview-label">Label preview</p>
+                            <p class="mt-1 text-sm font-medium text-gray-900" id="preview-price">Price preview</p>
                         </div>
+                    </div>
+
+                    <p class="block text-sm font-medium leading-6 text-gray-900 mt-6">Description preview</p>
+                    <div class="mx-auto w-full border border-gray-200 rounded-md p-6 mt-2">
+                        <p class="text-sm text-gray-700" id="preview-description">
+                            Made in collaboration with JerryRigEverything, our Teardown skin uses an optically clear gloss finish to ensure you see every dollar you wasted.
+                        </p>
                     </div>
                 </div>
             </div>
