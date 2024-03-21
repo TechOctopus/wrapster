@@ -1,4 +1,4 @@
-import { products } from "../data/data.js";
+import { products } from "../data/products.js";
 
 const filterProducts = (products, filter) => {
   if (!products || !products.length || !filter) {
@@ -18,17 +18,17 @@ const filterProducts = (products, filter) => {
     );
   }
 
-  // Filter by model
-  if (filter.model && filter.model.length > 0) {
+  // Filter by device
+  if (filter.device && filter.device.length > 0) {
     filteredProducts = filteredProducts.filter(product =>
-      filter.model.includes(product.model)
+      filter.device.includes(product.device)
     );
   }
 
   // Filter by collection
   if (filter.collection && filter.collection.length > 0) {
     filteredProducts = filteredProducts.filter(product =>
-      filter.collection.includes(product.collection)
+      filter.collection.includes(product.collection.id)
     );
   }
 
@@ -44,17 +44,17 @@ const filterProducts = (products, filter) => {
     }
    }
 
-  // Sort by model
-  if (filter.sort && filter.sort.orderByModel) {
-    if (filter.sort.orderByModel === "asc") {
-      filteredProducts.sort((a, b) => a.model.localeCompare(b.model));
+  // Sort by device
+  if (filter.sort && filter.sort.orderByDevice) {
+    if (filter.sort.orderByDevice === "asc") {
+      filteredProducts.sort((a, b) => a.device.localeCompare(b.device));
     }
   }
 
   // Search by name
   if (filter.search && filter.search.query !== "") {
     filteredProducts = filteredProducts.filter(product => {
-      const productInfo = `${product.name} ${product.label} ${product.model} ${product.description} ${product.price}`;
+      const productInfo = `${product.name} ${product.label} ${product.device} ${product.description} ${product.price}`;
       return productInfo.toLowerCase().includes(filter.search.query.toLowerCase());
     });
   }
@@ -65,8 +65,8 @@ const filterProducts = (products, filter) => {
 const countFilters = (filter) => {
   let count = 0;
 
-  if (filter.model && filter.model.length > 0) {
-    count += filter.model.length;
+  if (filter.device && filter.device.length > 0) {
+    count += filter.device.length;
   }
 
   if (filter.collection && filter.collection.length > 0) {
@@ -77,7 +77,7 @@ const countFilters = (filter) => {
     count++;
   }
 
-  if (filter.sort && (filter.sort.orderByPrice || filter.sort.orderByModel)) {
+  if (filter.sort && (filter.sort.orderByPrice || filter.sort.orderByDevice)) {
     count++;
   }
 
@@ -123,17 +123,17 @@ const createProductsHTML = (product) => `
       <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
           <img
               src="${product.image[0]}"
-              alt="${product.name}"
+              alt="${product.collection.name}"
               class="object-fit w-full aspect-[1/1] object-contain object-center"
           />
       </div>
       <h3 class="mt-4 text-sm text-gray-700">
           <a href="product.html">
               <span class="absolute inset-0"></span>
-              ${product.name}
+              ${product.collection.name}
           </a>
       </h3>
-      <p class="mt-1 text-sm text-gray-500">${product.label}</p>
+      <p class="mt-1 text-sm text-gray-500">${product.collection.label}</p>
       <p class="mt-1 text-sm font-medium text-gray-900">$${product.price}</p>
   </div>
 `;
@@ -151,8 +151,8 @@ const createProxiedProperty = (property, updateUI) => {
 // Filter state generator, it returns a proxy object that updates the UI when the state changes
 const createFilterState = (products) => {
   const filter = {
-    // Filter by model
-    model: createProxiedProperty([],
+    // Filter by device
+    device: createProxiedProperty([],
       () => showProducts(products, filter)),
     // Filter by price
     price: createProxiedProperty({
@@ -164,7 +164,7 @@ const createFilterState = (products) => {
     // Sorting
     sort: createProxiedProperty({
       orderByPrice: undefined,
-      orderByModel: undefined,
+      orderByDevice: undefined,
     }, () => showProducts(products, filter)),
     // Search
     search: createProxiedProperty({
@@ -222,7 +222,7 @@ const renderFilters = () => {
         menuItemElement.className = "text-gray-500 block px-4 py-2 text-sm hover:bg-indigo-100";
         menuItemState.active = undefined;
         filter.sort.orderByPrice = undefined;
-        filter.sort.orderByModel = undefined;
+        filter.sort.orderByDevice = undefined;
       }
       else {
 
@@ -237,7 +237,7 @@ const renderFilters = () => {
         switch (event.target.innerText) {
           case "Lowest Price": filter.sort.orderByPrice = "asc"; break;
           case "Highest Price": filter.sort.orderByPrice = "desc"; break;
-          case "Model": filter.sort.orderByModel = "asc"; break;
+          case "Device": filter.sort.orderByDevice = "asc"; break;
         }
       }
 
@@ -251,11 +251,11 @@ const renderFilters = () => {
     [filter.price.min, filter.price.max] = event.target.value.split("-");
   });
 
-  const modelFilterElement = document.getElementById("model-filter");
-  modelFilterElement.addEventListener("change", (event) => {
+  const deviceFilterElement = document.getElementById("device-filter");
+  deviceFilterElement.addEventListener("change", (event) => {
     event.target.checked
-      ? filter.model.push(event.target.value)
-      : filter.model.splice(filter.model.indexOf(event.target.value), 1);
+      ? filter.device.push(event.target.value)
+      : filter.device.splice(filter.device.indexOf(event.target.value), 1);
   });
 
   const collectionFilterElement = document.getElementById("collection-filter");
