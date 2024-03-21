@@ -1,5 +1,5 @@
 import Carousel from './Carousel.js';
-import { products } from "../data/data.js";
+import { products } from "../data/products.js";
 
 const renderCarousel = () => {
   const carouselElement = document.getElementById('carousel-example');
@@ -78,17 +78,17 @@ const renderMoreProducts = () => {
       <div class="w-full aspect-[1/1] overflow-hidden rounded-md group-hover:opacity-75 p-4 bg-gray-50">
           <img
               src="${product.image[0]}"
-              alt="${product.name}"
+              alt="${product.collection.name}"
               class="object-fit w-full aspect-[1/1] object-contain object-center"
           />
       </div>
       <h3 class="mt-4 text-sm text-gray-700">
           <a href="./product.html">
               <span class="absolute inset-0"></span>
-              ${product.name}
+              ${product.collection.name}
           </a>
       </h3>
-      <p class="mt-1 text-sm text-gray-500">${product.label}</p>
+      <p class="mt-1 text-sm text-gray-500">${product.collection.label}</p>
       <p class="mt-1 text-sm font-medium text-gray-900">$${product.price}</p>
     `;
     moreProductsElement.appendChild(productElement);
