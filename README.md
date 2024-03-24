@@ -28,3 +28,5 @@ A Robot
 ## Physical Database Model
 
 ![Physical Database Model](./docs/wrapster_physical_databse_model.svg)
+
+All datatypes are from PostgreSQL.
