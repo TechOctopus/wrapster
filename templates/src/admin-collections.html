@@ -110,18 +110,29 @@
     </nav>
 </header>
 <div class="mx-auto w-full max-w-[1200px] p-4 py-2 sm:px-6 lg:px-8">
-    <nav class="flex space-x-8" aria-label="Tabs">
-        <a href="./admin-products.html"
-           class="border-transparent text-gray-500 hover:border-gray-200 hover:text-gray-700 flex whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium">
-            Products
-            <span class="bg-gray-100 text-gray-900 ml-3 hidden rounded-full py-0.5 px-2.5 text-xs font-medium md:inline-block">23</span>
-        </a>
-        <a href="./admin-collections.html"
-           class="border-indigo-500 text-indigo-600 flex whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium"
-           aria-current="page">
-            Collections
-            <span class="bg-indigo-100 text-indigo-600 ml-3 hidden rounded-full py-0.5 px-2.5 text-xs font-medium md:inline-block">12</span>
-        </a>
+    <nav class="flex justify-between" aria-label="Tabs">
+        <div class="flex space-x-8">
+            <a href="./admin-products.html"
+            class="border-transparent text-gray-500 hover:border-gray-200 hover:text-gray-700 flex whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium">
+                Products
+                <span class="bg-gray-100 text-gray-900 ml-3 hidden rounded-full py-0.5 px-2.5 text-xs font-medium md:inline-block">23</span>
+            </a>
+            <a href="./admin-collections.html"
+            class="border-indigo-500 text-indigo-600 flex whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium"
+            aria-current="page">
+                Collections
+                <span class="bg-indigo-100 text-indigo-600 ml-3 hidden rounded-full py-0.5 px-2.5 text-xs font-medium md:inline-block">12</span>
+            </a>
+        </div>
+        <div class="flex items-center">
+            <button
+                onclick="location.href='index.html'"
+                type="button"
+                class="relative inline-flex items-center rounded-md bg-primary-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600"
+            >
+                Log out
+            </button>
+        </div>
     </nav>
 </div>
 <main class="flex w-full flex-col bg-white">

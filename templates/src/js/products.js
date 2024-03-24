@@ -54,7 +54,7 @@ const filterProducts = (products, filter) => {
   // Search by name
   if (filter.search && filter.search.query !== "") {
     filteredProducts = filteredProducts.filter(product => {
-      const productInfo = `${product.name} ${product.label} ${product.device} ${product.description} ${product.price}`;
+      const productInfo = `${product.collection.name} ${product.collection.label} ${product.device} ${product.collection.description} ${product.price}`;
       return productInfo.toLowerCase().includes(filter.search.query.toLowerCase());
     });
   }
